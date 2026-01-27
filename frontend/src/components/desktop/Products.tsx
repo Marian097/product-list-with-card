@@ -1,4 +1,5 @@
 import type { Prod } from "@/types/Products";
+import Add from "@/assets/images/icon-add-to-cart.svg";
 
 type ProductsProp = {
   data: Prod[];
@@ -6,14 +7,21 @@ type ProductsProp = {
 
 export default function Products({ data }: ProductsProp) {
   return (
-    <div className = "flex flex-wrap">
+    <div className="grid md:grid-cols-3 md:gap-4">
       {data.map((p) => (
         <div key={`${p.name}`}>
-          <div>
-            <img src={p.image.desktop}/>
+          <div className="md:w-60">
+            <img src={p.image.desktop} className="rounded-lg" />
           </div>
-          <div>
-            <button>Add to Cart</button>
+          <div className="flex justify-center">
+            <button className="border md:w-36 md:h-9 rounded-3xl md:text-sm">
+              <div className="relative">
+                <div className="absolute left-3">
+                  <img src={Add} alt="" />
+                </div>
+              </div>
+              <span className="my-auto">Add to Cart</span>
+            </button>
           </div>
           <div>
             <h2>{p.category}</h2>

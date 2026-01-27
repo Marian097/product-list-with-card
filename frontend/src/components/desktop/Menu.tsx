@@ -7,11 +7,13 @@ type ProdProps = {
 
 export default function Menu({ data }: ProdProps) {
   return (
-    <main>
-      <h1>Desserts</h1>
-      <div>
-        <Products data={data}/>
+    <div>
+      <div className = "flex md:ml-20 md:pt-20 md:pb-10">
+        <h1 className = "font-bold md:text-4xl ">Desserts</h1>
       </div>
-    </main>
+      <div className = "flex md:ml-20">
+        <Products data={data} />
+      </div>
+    </div>
   );
 }
