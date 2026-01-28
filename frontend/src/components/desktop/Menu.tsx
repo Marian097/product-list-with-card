@@ -2,17 +2,18 @@ import Products from "./Products";
 import type { Prod } from "@/types/Products";
 
 type ProdProps = {
-  data: Prod[];
+  products: Prod[];
+  addToCart: (products: Prod) => void; 
 };
 
-export default function Menu({ data }: ProdProps) {
+export default function Menu({ products, addToCart }: ProdProps) {
   return (
     <div>
       <div className = "flex md:ml-20 md:pt-20 md:pb-10">
         <h1 className = "font-bold md:text-4xl ">Desserts</h1>
       </div>
       <div className = "flex md:ml-20">
-        <Products data={data} />
+        <Products products={products} addToCart = {addToCart} />
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+
 type ImageSet = {
     desktop: string,
     mobile: string,
@@ -8,6 +9,7 @@ type ImageSet = {
 
 
 export type Prod = {
+    id: string,
     image: ImageSet,
     category: string,
     name:string,

@@ -5,7 +5,7 @@ function App() {
   const render = Shop()
   return (
     <>
-    <Home data = {render.data}/>
+    <Home products= {render.products} cart = {render.cart} total = {render.total} addToCart = {render.addToCart}/>
     </>
   )
 }
