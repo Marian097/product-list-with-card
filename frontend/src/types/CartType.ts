@@ -4,5 +4,6 @@ export type CartType = {
     quantity: number,
     price:number,
     subtotal: number,
-    total?:number
+    total?:number,
+    length?:number,
 }

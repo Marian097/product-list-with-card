@@ -7,10 +7,12 @@ export default function Shop() {
   const [data, setData] = useState<DataApi[]>([]);
   const [products, setProducts] = useState<Prod[]>([]);
   const [cart, setCart] = useState<CartType[]>([]);
-  
+  const [length, setLength] = useState(0);
+  const [isNothing, setIsNothing] = useState(false)
+
   const total = useMemo(() => {
-    return cart.reduce((sum, val) => sum + val.subtotal, 0)
-  }, [cart])
+    return cart.reduce((sum, val) => sum + val.subtotal, 0);
+  }, [cart]);
 
   useEffect(() => {
     fetch("/data.json")
@@ -30,13 +32,14 @@ export default function Shop() {
     setProducts(prodArray);
   }, [data]);
 
+
   function addToCart(item: Prod) {
     setCart((prev) => {
       const found = prev.find((p) => p.id === item.id);
       if (found)
         return prev.map((p) =>
           p.id === item.id
-            ? { ...p, quantity: p.quantity + 1, subtotal: p.quantity * p.price }
+            ? { ...p, quantity: p.quantity + 1, subtotal: (p.quantity + 1) * p.price }
             : p,
         );
       return [
@@ -50,13 +53,30 @@ export default function Shop() {
         },
       ];
     });
+    setLength((prev) => prev + 1);
   }
+
+  function handleDeleteToCart(items: Prod) {
+    setCart((prev) => {
+      const found = prev.find((p) => p.id === items.id);
+      if (found)
+        return prev.map((p) =>
+          p.id === items.id && p.quantity >= 1
+            ? {...p, quantity: p.quantity - 1, subtotal: p.subtotal - p.price } : p)
+
+        return prev.filter((p) => p.id !== items.id)
+        
+    });
+  }
+
   return {
     products,
     total,
     cart,
+    length,
+    isNothing,
 
-
-    addToCart
+    addToCart,
+    handleDeleteToCart,
   };
 }

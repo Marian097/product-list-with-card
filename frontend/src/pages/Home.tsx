@@ -8,16 +8,19 @@ type Props = {
     products: Prod[],
     cart: CartType[],
     total:number,
-    addToCart: (product: Prod) => void
+    length:number,
+    isNothing: boolean,
+    addToCart: (product: Prod) => void,
+    handleDeleteToCart: (cart: Prod) => void
 }
 
 
 
-export default function Home({products, cart, total, addToCart} : Props) {
+export default function Home({products, cart, total, length, isNothing, addToCart, handleDeleteToCart} : Props) {
   return (
     <main className = "flex">
-        <Menu products = {products} addToCart = {addToCart}/>
-        <Cart cart = {cart} total = {total}/>
+        <Menu products = {products} addToCart = {addToCart} handleDeleteToCart = {handleDeleteToCart}/>
+        <Cart cart = {cart} total = {total} length = {length} isNothing = {isNothing}/>
     </main>
   )
 }
