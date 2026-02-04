@@ -18,7 +18,7 @@ type Props = {
 
 export default function Home({products, cart, total, length, isNothingInCart, addToCart, handleDeleteToCart} : Props) {
   return (
-    <main className = "flex">
+    <main className = "flex md:justify-center">
         <Menu products = {products} addToCart = {addToCart} isNothingInCart = {isNothingInCart} cart = {cart}/>
         <Cart cart = {cart} total = {total} length = {length} isNothingInCart = {isNothingInCart} handleDeleteToCart = {handleDeleteToCart}/>
     </main>
