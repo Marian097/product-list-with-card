@@ -9,18 +9,18 @@ type Props = {
     cart: CartType[],
     total:number,
     length:number,
-    isNothing: boolean,
+    isNothingInCart: boolean,
     addToCart: (product: Prod) => void,
-    handleDeleteToCart: (cart: Prod) => void
+    handleDeleteToCart: (id: string) => void
 }
 
 
 
-export default function Home({products, cart, total, length, isNothing, addToCart, handleDeleteToCart} : Props) {
+export default function Home({products, cart, total, length, isNothingInCart, addToCart, handleDeleteToCart} : Props) {
   return (
     <main className = "flex">
-        <Menu products = {products} addToCart = {addToCart} handleDeleteToCart = {handleDeleteToCart}/>
-        <Cart cart = {cart} total = {total} length = {length} isNothing = {isNothing}/>
+        <Menu products = {products} addToCart = {addToCart} isNothingInCart = {isNothingInCart} cart = {cart}/>
+        <Cart cart = {cart} total = {total} length = {length} isNothingInCart = {isNothingInCart} handleDeleteToCart = {handleDeleteToCart}/>
     </main>
   )
 }

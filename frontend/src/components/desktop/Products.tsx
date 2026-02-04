@@ -3,16 +3,16 @@ import Add from "@/assets/images/icon-add-to-cart.svg";
 
 type ProductsProp = {
   products: Prod[];
+  isNothingInCart:boolean,
   addToCart: (products: Prod) => void;
-  handleDeleteToCart: (cart: Prod) => void;
 };
 
-export default function Products({ products, addToCart, handleDeleteToCart }: ProductsProp) {
+export default function Products({ products, addToCart }: ProductsProp) {
   return (
     <div className="grid md:grid-cols-3 md:gap-4">
       {products.map((p) => (
         <div key={`${p.id}`} className = "relative">
-          <div className="md:w-60">
+          <div className="">
             <img src={p.image.desktop} className="rounded-lg" />
           </div>
           <div className="absolute md:top-52 md:left-12">
@@ -24,7 +24,6 @@ export default function Products({ products, addToCart, handleDeleteToCart }: Pr
               </div>
               <span className="my-auto">Add to Cart</span>
             </button>
-            <button onClick = {() => handleDeleteToCart(p)}>Delete</button>
           </div>
           <div className = "pt-5">
             <h2 className = "font-light text-gray-600/70">{p.category}</h2>
