@@ -1,101 +1,992 @@
-[
+{
+  "desserts": [
     {
-       "image": {
-            "thumbnail": "../src/assets/images/image-waffle-thumbnail.jpg",
-            "mobile": "../src/assets/images/image-waffle-mobile.jpg",
-            "tablet": "../src/assets/images/image-waffle-tablet.jpg",
-            "desktop": "../src/assets/images/image-waffle-desktop.jpg"
-       },
-       "name": "Waffle with Berries",
-       "category": "Waffle",
-       "price": 6.50
+      "id": "dessert-1",
+      "image": {
+        "thumbnail": "../src/assets/images/image-waffle-thumbnail.jpg",
+        "mobile": "../src/assets/images/image-waffle-mobile.jpg",
+        "tablet": "../src/assets/images/image-waffle-tablet.jpg",
+        "desktop": "../src/assets/images/image-waffle-desktop.jpg"
+      },
+      "name": "Waffle with Berries",
+      "category": "Waffle",
+      "price": 6.5,
+      "ingredients": [
+        {
+          "name": "Waffle batter",
+          "weight": 120
+        },
+        {
+          "name": "Fresh berries",
+          "weight": 60
+        },
+        {
+          "name": "Whipped cream",
+          "weight": 40
+        },
+        {
+          "name": "Maple syrup",
+          "weight": 25
+        },
+        {
+          "name": "Powdered sugar",
+          "weight": 10
+        }
+      ],
+      "weight": 255,
+      "calories": 540
     },
     {
-        "image": {
-            "thumbnail": "../src/assets/images/image-creme-brulee-thumbnail.jpg",
-            "mobile": "../src/assets/images/image-creme-brulee-mobile.jpg",
-            "tablet": "../src/assets/images/image-creme-brulee-tablet.jpg",
-            "desktop": "../src/assets/images/image-creme-brulee-desktop.jpg"
+      "id": "dessert-2",
+      "image": {
+        "thumbnail": "../src/assets/images/image-creme-brulee-thumbnail.jpg",
+        "mobile": "../src/assets/images/image-creme-brulee-mobile.jpg",
+        "tablet": "../src/assets/images/image-creme-brulee-tablet.jpg",
+        "desktop": "../src/assets/images/image-creme-brulee-desktop.jpg"
+      },
+      "name": "Vanilla Bean Crème Brûlée",
+      "category": "Crème Brûlée",
+      "price": 7,
+      "ingredients": [
+        {
+          "name": "Cream",
+          "weight": 120
         },
-        "name": "Vanilla Bean Crème Brûlée",
-        "category": "Crème Brûlée",
-        "price": 7.00
-     },
-     {
-        "image": {
-            "thumbnail": "../src/assets/images/image-macaron-thumbnail.jpg",
-            "mobile": "../src/assets/images/image-macaron-mobile.jpg",
-            "tablet": "../src/assets/images/image-macaron-tablet.jpg",
-            "desktop": "../src/assets/images/image-macaron-desktop.jpg"
+        {
+          "name": "Egg yolk",
+          "weight": 40
         },
-        "name": "Macaron Mix of Five",
-        "category": "Macaron",
-        "price": 8.00
-     },
-     {
-        "image": {
-            "thumbnail": "../src/assets/images/image-tiramisu-thumbnail.jpg",
-            "mobile": "../src/assets/images/image-tiramisu-mobile.jpg",
-            "tablet": "../src/assets/images/image-tiramisu-tablet.jpg",
-            "desktop": "../src/assets/images/image-tiramisu-desktop.jpg"
+        {
+          "name": "Sugar",
+          "weight": 25
         },
-        "name": "Classic Tiramisu",
-        "category": "Tiramisu",
-        "price": 5.50
-     },
-     {
-        "image": {
-            "thumbnail": "../src/assets/images/image-baklava-thumbnail.jpg",
-            "mobile": "../src/assets/images/image-baklava-mobile.jpg",
-            "tablet": "../src/assets/images/image-baklava-tablet.jpg",
-            "desktop": "../src/assets/images/image-baklava-desktop.jpg"
+        {
+          "name": "Vanilla",
+          "weight": 5
+        }
+      ],
+      "weight": 190,
+      "calories": 470
+    },
+    {
+      "id": "dessert-3",
+      "image": {
+        "thumbnail": "../src/assets/images/image-macaron-thumbnail.jpg",
+        "mobile": "../src/assets/images/image-macaron-mobile.jpg",
+        "tablet": "../src/assets/images/image-macaron-tablet.jpg",
+        "desktop": "../src/assets/images/image-macaron-desktop.jpg"
+      },
+      "name": "Macaron Mix of Five",
+      "category": "Macaron",
+      "price": 8,
+      "ingredients": [
+        {
+          "name": "Almond flour",
+          "weight": 80
         },
-        "name": "Pistachio Baklava",
-        "category": "Baklava",
-        "price": 4.00
-     },
-     {
-        "image": {
-            "thumbnail": "../src/assets/images/image-meringue-thumbnail.jpg",
-            "mobile": "../src/assets/images/image-meringue-mobile.jpg",
-            "tablet": "../src/assets/images/image-meringue-tablet.jpg",
-            "desktop": "../src/assets/images/image-meringue-desktop.jpg"
+        {
+          "name": "Egg white",
+          "weight": 40
         },
-        "name": "Lemon Meringue Pie",
-        "category": "Pie",
-        "price": 5.00
-     },
-     {
-        "image": {
-            "thumbnail": "../src/assets/images/image-cake-thumbnail.jpg",
-            "mobile": "../src/assets/images/image-cake-mobile.jpg",
-            "tablet": "../src/assets/images/image-cake-tablet.jpg",
-            "desktop": "../src/assets/images/image-cake-desktop.jpg"
+        {
+          "name": "Sugar",
+          "weight": 60
         },
-        "name": "Red Velvet Cake",
-        "category": "Cake",
-        "price": 4.50
-     },
-     {
-        "image": {
-            "thumbnail": "../src/assets/images/image-brownie-thumbnail.jpg",
-            "mobile": "../src/assets/images/image-brownie-mobile.jpg",
-            "tablet": "../src/assets/images/image-brownie-tablet.jpg",
-            "desktop": "../src/assets/images/image-brownie-desktop.jpg"
+        {
+          "name": "Buttercream",
+          "weight": 50
+        }
+      ],
+      "weight": 230,
+      "calories": 510
+    },
+    {
+      "id": "dessert-4",
+      "image": {
+        "thumbnail": "../src/assets/images/image-tiramisu-thumbnail.jpg",
+        "mobile": "../src/assets/images/image-tiramisu-mobile.jpg",
+        "tablet": "../src/assets/images/image-tiramisu-tablet.jpg",
+        "desktop": "../src/assets/images/image-tiramisu-desktop.jpg"
+      },
+      "name": "Classic Tiramisu",
+      "category": "Tiramisu",
+      "price": 5.5,
+      "ingredients": [
+        {
+          "name": "Mascarpone",
+          "weight": 90
         },
-        "name": "Salted Caramel Brownie",
-        "category": "Brownie",
-        "price": 4.50
-     },
-     {
-        "image": {
-            "thumbnail": "../src/assets/images/image-panna-cotta-thumbnail.jpg",
-            "mobile": "../src/assets/images/image-panna-cotta-mobile.jpg",
-            "tablet": "../src/assets/images/image-panna-cotta-tablet.jpg",
-            "desktop": "../src/assets/images/image-panna-cotta-desktop.jpg"
+        {
+          "name": "Ladyfingers",
+          "weight": 70
         },
-        "name": "Vanilla Panna Cotta",
-        "category": "Panna Cotta",
-        "price": 6.50
-     }
-]
+        {
+          "name": "Coffee",
+          "weight": 40
+        },
+        {
+          "name": "Cocoa powder",
+          "weight": 10
+        },
+        {
+          "name": "Sugar",
+          "weight": 20
+        }
+      ],
+      "weight": 230,
+      "calories": 520
+    },
+    {
+      "id": "dessert-5",
+      "image": {
+        "thumbnail": "../src/assets/images/image-baklava-thumbnail.jpg",
+        "mobile": "../src/assets/images/image-baklava-mobile.jpg",
+        "tablet": "../src/assets/images/image-baklava-tablet.jpg",
+        "desktop": "../src/assets/images/image-baklava-desktop.jpg"
+      },
+      "name": "Pistachio Baklava",
+      "category": "Baklava",
+      "price": 4,
+      "ingredients": [
+        {
+          "name": "Phyllo dough",
+          "weight": 70
+        },
+        {
+          "name": "Pistachios",
+          "weight": 50
+        },
+        {
+          "name": "Butter",
+          "weight": 40
+        },
+        {
+          "name": "Honey syrup",
+          "weight": 30
+        }
+      ],
+      "weight": 190,
+      "calories": 480
+    },
+    {
+      "id": "dessert-6",
+      "image": {
+        "thumbnail": "../src/assets/images/image-meringue-thumbnail.jpg",
+        "mobile": "../src/assets/images/image-meringue-mobile.jpg",
+        "tablet": "../src/assets/images/image-meringue-tablet.jpg",
+        "desktop": "../src/assets/images/image-meringue-desktop.jpg"
+      },
+      "name": "Lemon Meringue Pie",
+      "category": "Pie",
+      "price": 5,
+      "ingredients": [
+        {
+          "name": "Pie crust",
+          "weight": 80
+        },
+        {
+          "name": "Lemon curd",
+          "weight": 90
+        },
+        {
+          "name": "Egg whites",
+          "weight": 40
+        },
+        {
+          "name": "Sugar",
+          "weight": 25
+        }
+      ],
+      "weight": 235,
+      "calories": 460
+    },
+    {
+      "id": "dessert-7",
+      "image": {
+        "thumbnail": "../src/assets/images/image-cake-thumbnail.jpg",
+        "mobile": "../src/assets/images/image-cake-mobile.jpg",
+        "tablet": "../src/assets/images/image-cake-tablet.jpg",
+        "desktop": "../src/assets/images/image-cake-desktop.jpg"
+      },
+      "name": "Red Velvet Cake",
+      "category": "Cake",
+      "price": 4.5,
+      "ingredients": [
+        {
+          "name": "Cake sponge",
+          "weight": 120
+        },
+        {
+          "name": "Cream cheese frosting",
+          "weight": 70
+        },
+        {
+          "name": "Sugar",
+          "weight": 30
+        }
+      ],
+      "weight": 220,
+      "calories": 510
+    },
+    {
+      "id": "dessert-8",
+      "image": {
+        "thumbnail": "../src/assets/images/image-brownie-thumbnail.jpg",
+        "mobile": "../src/assets/images/image-brownie-mobile.jpg",
+        "tablet": "../src/assets/images/image-brownie-tablet.jpg",
+        "desktop": "../src/assets/images/image-brownie-desktop.jpg"
+      },
+      "name": "Salted Caramel Brownie",
+      "category": "Brownie",
+      "price": 4.5,
+      "ingredients": [
+        {
+          "name": "Chocolate",
+          "weight": 70
+        },
+        {
+          "name": "Butter",
+          "weight": 40
+        },
+        {
+          "name": "Sugar",
+          "weight": 35
+        },
+        {
+          "name": "Caramel",
+          "weight": 25
+        },
+        {
+          "name": "Salt flakes",
+          "weight": 2
+        }
+      ],
+      "weight": 172,
+      "calories": 490
+    },
+    {
+      "id": "dessert-9",
+      "image": {
+        "thumbnail": "../src/assets/images/image-panna-cotta-thumbnail.jpg",
+        "mobile": "../src/assets/images/image-panna-cotta-mobile.jpg",
+        "tablet": "../src/assets/images/image-panna-cotta-tablet.jpg",
+        "desktop": "../src/assets/images/image-panna-cotta-desktop.jpg"
+      },
+      "name": "Vanilla Panna Cotta",
+      "category": "Panna Cotta",
+      "price": 6.5,
+      "ingredients": [
+        {
+          "name": "Cream",
+          "weight": 120
+        },
+        {
+          "name": "Sugar",
+          "weight": 25
+        },
+        {
+          "name": "Vanilla",
+          "weight": 5
+        },
+        {
+          "name": "Gelatin",
+          "weight": 5
+        }
+      ],
+      "weight": 155,
+      "calories": 430
+    }
+  ],
+  "burgers": [
+    {
+      "id": "burger-1",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/845362/pexels-photo-845362.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/845362/pexels-photo-845362.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/845362/pexels-photo-845362.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/845362/pexels-photo-845362.jpeg"
+      },
+      "name": "Classic Beef Burger",
+      "category": "Beef",
+      "price": 9.5,
+      "ingredients": [
+        {
+          "name": "Beef patty",
+          "weight": 120
+        },
+        {
+          "name": "Burger bun",
+          "weight": 80
+        },
+        {
+          "name": "Cheddar",
+          "weight": 30
+        },
+        {
+          "name": "Lettuce",
+          "weight": 15
+        },
+        {
+          "name": "Tomato",
+          "weight": 20
+        },
+        {
+          "name": "Pickles",
+          "weight": 10
+        },
+        {
+          "name": "House sauce",
+          "weight": 25
+        }
+      ],
+      "weight": 300,
+      "calories": 720
+    },
+    {
+      "id": "burger-2",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg"
+      },
+      "name": "Cheeseburger Deluxe",
+      "category": "Cheese",
+      "price": 10,
+      "ingredients": [
+        {
+          "name": "Beef patty",
+          "weight": 120
+        },
+        {
+          "name": "Burger bun",
+          "weight": 80
+        },
+        {
+          "name": "Cheddar",
+          "weight": 50
+        },
+        {
+          "name": "Onion",
+          "weight": 15
+        },
+        {
+          "name": "Sauce",
+          "weight": 30
+        }
+      ],
+      "weight": 295,
+      "calories": 780
+    },
+    {
+      "id": "burger-3",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg"
+      },
+      "name": "Crispy Chicken Burger",
+      "category": "Chicken",
+      "price": 8.5,
+      "ingredients": [
+        {
+          "name": "Chicken fillet",
+          "weight": 110
+        },
+        {
+          "name": "Burger bun",
+          "weight": 80
+        },
+        {
+          "name": "Mayonnaise",
+          "weight": 25
+        },
+        {
+          "name": "Lettuce",
+          "weight": 15
+        },
+        {
+          "name": "Pickles",
+          "weight": 10
+        }
+      ],
+      "weight": 240,
+      "calories": 640
+    },
+    {
+      "id": "burger-4",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/1639564/pexels-photo-1639564.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/1639564/pexels-photo-1639564.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/1639564/pexels-photo-1639564.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/1639564/pexels-photo-1639564.jpeg"
+      },
+      "name": "Veggie Burger",
+      "category": "Vegetarian",
+      "price": 8,
+      "ingredients": [
+        {
+          "name": "Veggie patty",
+          "weight": 110
+        },
+        {
+          "name": "Burger bun",
+          "weight": 80
+        },
+        {
+          "name": "Tomato",
+          "weight": 20
+        },
+        {
+          "name": "Lettuce",
+          "weight": 15
+        },
+        {
+          "name": "Onion",
+          "weight": 15
+        },
+        {
+          "name": "Sauce",
+          "weight": 25
+        }
+      ],
+      "weight": 265,
+      "calories": 580
+    },
+    {
+      "id": "burger-5",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/2983097/pexels-photo-2983097.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/2983097/pexels-photo-2983097.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/2983097/pexels-photo-2983097.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/2983097/pexels-photo-2983097.jpeg"
+      },
+      "name": "Bacon BBQ Burger",
+      "category": "Beef",
+      "price": 11,
+      "ingredients": [
+        {
+          "name": "Beef patty",
+          "weight": 120
+        },
+        {
+          "name": "Burger bun",
+          "weight": 80
+        },
+        {
+          "name": "Bacon",
+          "weight": 35
+        },
+        {
+          "name": "Cheddar",
+          "weight": 30
+        },
+        {
+          "name": "BBQ sauce",
+          "weight": 30
+        },
+        {
+          "name": "Onion",
+          "weight": 15
+        }
+      ],
+      "weight": 310,
+      "calories": 850
+    },
+    {
+      "id": "burger-6",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg"
+      },
+      "name": "Double Beef Burger",
+      "category": "Beef",
+      "price": 12.5,
+      "ingredients": [
+        {
+          "name": "Beef patty",
+          "weight": 220
+        },
+        {
+          "name": "Burger bun",
+          "weight": 85
+        },
+        {
+          "name": "Cheddar",
+          "weight": 40
+        },
+        {
+          "name": "Pickles",
+          "weight": 10
+        },
+        {
+          "name": "Sauce",
+          "weight": 30
+        }
+      ],
+      "weight": 385,
+      "calories": 980
+    },
+    {
+      "id": "burger-7",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/750073/pexels-photo-750073.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/750073/pexels-photo-750073.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/750073/pexels-photo-750073.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/750073/pexels-photo-750073.jpeg"
+      },
+      "name": "Avocado Beef Burger",
+      "category": "Beef",
+      "price": 10.8,
+      "ingredients": [
+        {
+          "name": "Beef patty",
+          "weight": 120
+        },
+        {
+          "name": "Burger bun",
+          "weight": 80
+        },
+        {
+          "name": "Avocado",
+          "weight": 50
+        },
+        {
+          "name": "Tomato",
+          "weight": 20
+        },
+        {
+          "name": "Lettuce",
+          "weight": 15
+        },
+        {
+          "name": "Sauce",
+          "weight": 25
+        }
+      ],
+      "weight": 310,
+      "calories": 790
+    },
+    {
+      "id": "burger-8",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg"
+      },
+      "name": "Smoky BBQ Burger",
+      "category": "BBQ",
+      "price": 11.5,
+      "ingredients": [
+        {
+          "name": "Beef patty",
+          "weight": 120
+        },
+        {
+          "name": "Burger bun",
+          "weight": 80
+        },
+        {
+          "name": "Bacon",
+          "weight": 35
+        },
+        {
+          "name": "Cheddar",
+          "weight": 30
+        },
+        {
+          "name": "BBQ sauce",
+          "weight": 30
+        },
+        {
+          "name": "Onion",
+          "weight": 15
+        }
+      ],
+      "weight": 310,
+      "calories": 850
+    },
+    {
+      "id": "burger-9",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg"
+      },
+      "name": "Texas Spicy Burger",
+      "category": "Spicy",
+      "price": 10.2,
+      "ingredients": [
+        {
+          "name": "Beef patty",
+          "weight": 120
+        },
+        {
+          "name": "Burger bun",
+          "weight": 80
+        },
+        {
+          "name": "Jalapeños",
+          "weight": 15
+        },
+        {
+          "name": "Pepper jack",
+          "weight": 35
+        },
+        {
+          "name": "Spicy sauce",
+          "weight": 30
+        },
+        {
+          "name": "Lettuce",
+          "weight": 15
+        }
+      ],
+      "weight": 295,
+      "calories": 820
+    }
+  ],
+  "pizza": [
+    {
+      "id": "pizza-1",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg"
+      },
+      "name": "Margherita Classic",
+      "category": "Vegetarian",
+      "price": 7.5,
+      "ingredients": [
+        {
+          "name": "Pizza dough",
+          "weight": 200
+        },
+        {
+          "name": "Tomato sauce",
+          "weight": 80
+        },
+        {
+          "name": "Mozzarella",
+          "weight": 120
+        },
+        {
+          "name": "Basil",
+          "weight": 5
+        },
+        {
+          "name": "Olive oil",
+          "weight": 10
+        }
+      ],
+      "weight": 415,
+      "calories": 680
+    },
+    {
+      "id": "pizza-2",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg"
+      },
+      "name": "Pepperoni Feast",
+      "category": "Meat",
+      "price": 9.5,
+      "ingredients": [
+        {
+          "name": "Pizza dough",
+          "weight": 210
+        },
+        {
+          "name": "Tomato sauce",
+          "weight": 90
+        },
+        {
+          "name": "Mozzarella",
+          "weight": 120
+        },
+        {
+          "name": "Pepperoni",
+          "weight": 80
+        }
+      ],
+      "weight": 500,
+      "calories": 820
+    },
+    {
+      "id": "pizza-3",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg"
+      },
+      "name": "BBQ Chicken Pizza",
+      "category": "Chicken",
+      "price": 10,
+      "ingredients": [
+        {
+          "name": "Pizza dough",
+          "weight": 210
+        },
+        {
+          "name": "BBQ sauce",
+          "weight": 80
+        },
+        {
+          "name": "Mozzarella",
+          "weight": 110
+        },
+        {
+          "name": "Chicken",
+          "weight": 100
+        },
+        {
+          "name": "Red onion",
+          "weight": 20
+        }
+      ],
+      "weight": 520,
+      "calories": 860
+    },
+    {
+      "id": "pizza-4",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/2232/vegetables-italian-pizza-restaurant.jpg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/2232/vegetables-italian-pizza-restaurant.jpg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/2232/vegetables-italian-pizza-restaurant.jpg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/2232/vegetables-italian-pizza-restaurant.jpg"
+      },
+      "name": "Veggie Supreme",
+      "category": "Vegetarian",
+      "price": 8.5,
+      "ingredients": [
+        {
+          "name": "Pizza dough",
+          "weight": 200
+        },
+        {
+          "name": "Tomato sauce",
+          "weight": 80
+        },
+        {
+          "name": "Mozzarella",
+          "weight": 100
+        },
+        {
+          "name": "Bell pepper",
+          "weight": 40
+        },
+        {
+          "name": "Mushrooms",
+          "weight": 40
+        },
+        {
+          "name": "Olives",
+          "weight": 25
+        },
+        {
+          "name": "Onion",
+          "weight": 20
+        }
+      ],
+      "weight": 505,
+      "calories": 740
+    },
+    {
+      "id": "pizza-5",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/708587/pexels-photo-708587.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/708587/pexels-photo-708587.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/708587/pexels-photo-708587.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/708587/pexels-photo-708587.jpeg"
+      },
+      "name": "Four Cheese Pizza",
+      "category": "Cheese",
+      "price": 9,
+      "ingredients": [
+        {
+          "name": "Pizza dough",
+          "weight": 200
+        },
+        {
+          "name": "Tomato sauce",
+          "weight": 60
+        },
+        {
+          "name": "Mozzarella",
+          "weight": 90
+        },
+        {
+          "name": "Gorgonzola",
+          "weight": 50
+        },
+        {
+          "name": "Parmesan",
+          "weight": 35
+        },
+        {
+          "name": "Ricotta",
+          "weight": 60
+        }
+      ],
+      "weight": 495,
+      "calories": 890
+    },
+    {
+      "id": "pizza-6",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/4109123/pexels-photo-4109123.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/4109123/pexels-photo-4109123.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/4109123/pexels-photo-4109123.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/4109123/pexels-photo-4109123.jpeg"
+      },
+      "name": "Spicy Salami Pizza",
+      "category": "Spicy",
+      "price": 9.8,
+      "ingredients": [
+        {
+          "name": "Pizza dough",
+          "weight": 210
+        },
+        {
+          "name": "Tomato sauce",
+          "weight": 80
+        },
+        {
+          "name": "Mozzarella",
+          "weight": 110
+        },
+        {
+          "name": "Spicy salami",
+          "weight": 90
+        },
+        {
+          "name": "Chili flakes",
+          "weight": 3
+        }
+      ],
+      "weight": 493,
+      "calories": 880
+    },
+    {
+      "id": "pizza-7",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg"
+      },
+      "name": "Hawaiian Pizza",
+      "category": "Sweet & Savory",
+      "price": 8.9,
+      "ingredients": [
+        {
+          "name": "Pizza dough",
+          "weight": 210
+        },
+        {
+          "name": "Tomato sauce",
+          "weight": 80
+        },
+        {
+          "name": "Mozzarella",
+          "weight": 110
+        },
+        {
+          "name": "Ham",
+          "weight": 80
+        },
+        {
+          "name": "Pineapple",
+          "weight": 80
+        }
+      ],
+      "weight": 560,
+      "calories": 840
+    },
+    {
+      "id": "pizza-8",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/3915857/pexels-photo-3915857.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/3915857/pexels-photo-3915857.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/3915857/pexels-photo-3915857.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/3915857/pexels-photo-3915857.jpeg"
+      },
+      "name": "Prosciutto & Arugula",
+      "category": "Italian",
+      "price": 11,
+      "ingredients": [
+        {
+          "name": "Pizza dough",
+          "weight": 210
+        },
+        {
+          "name": "Tomato sauce",
+          "weight": 70
+        },
+        {
+          "name": "Mozzarella",
+          "weight": 110
+        },
+        {
+          "name": "Prosciutto",
+          "weight": 70
+        },
+        {
+          "name": "Arugula",
+          "weight": 20
+        },
+        {
+          "name": "Parmesan",
+          "weight": 25
+        }
+      ],
+      "weight": 505,
+      "calories": 820
+    },
+    {
+      "id": "pizza-9",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "mobile": "https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "tablet": "https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "desktop": "https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg"
+      },
+      "name": "Mushroom Truffle Pizza",
+      "category": "Gourmet",
+      "price": 12.5,
+      "ingredients": [
+        {
+          "name": "Pizza dough",
+          "weight": 210
+        },
+        {
+          "name": "Truffle cream",
+          "weight": 70
+        },
+        {
+          "name": "Mozzarella",
+          "weight": 110
+        },
+        {
+          "name": "Mushrooms",
+          "weight": 90
+        },
+        {
+          "name": "Parmesan",
+          "weight": 25
+        }
+      ],
+      "weight": 505,
+      "calories": 860
+    }
+  ]
+}

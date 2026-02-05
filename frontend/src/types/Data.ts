@@ -1,16 +1,9 @@
-type ImageSet = {
-    desktop: string,
-    mobile: string,
-    tablet: string,
-    thumbnails: string
-}
+import type {Prod} from "@/types/Products"
 
 
 
 export type DataApi = {
-    image: ImageSet,
-    category: string,
-    name:string,
-    price: number
-}
-
+    desserts: Prod[],
+    burgers: Prod[],
+    pizza: Prod[],
+};

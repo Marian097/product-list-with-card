@@ -3,9 +3,15 @@ import type { DataApi } from "@/types/Data";
 import type { Prod } from "@/types/Products";
 import type { CartType } from "@/types/CartType";
 
+
+
+type Key = "desserts" | "burgers" | "pizza";
+
+
 export default function Shop() {
-  const [data, setData] = useState<DataApi[]>([]);
+  const [data, setData] = useState<DataApi | null>(null);
   const [products, setProducts] = useState<Prod[]>([]);
+  const [key, setKey] = useState<Key>("desserts")
   const [cart, setCart] = useState<CartType[]>([]);
   const [length, setLength] = useState(0);
   const [isNothingInCart, setIsNothingInCart] = useState(false)
@@ -22,16 +28,12 @@ export default function Shop() {
 
   useEffect(() => {
     if (!data) return;
-    const prodArray: Prod[] = data.map((item) => ({
-      id: crypto.randomUUID(),
-      image: item.image,
-      category: item.category,
-      name: item.name,
-      price: item.price,
-    }));
+    const prodArray: Prod[] = data[key]
     setProducts(prodArray);
-  }, [data]);
+  }, [data, key]);
 
+
+  console.log(data)
 
 
   useEffect(() => {
@@ -76,6 +78,19 @@ export default function Shop() {
     setLength(prev => prev - 1);
   }
 
+
+  function setBurgers(){
+    setKey("burgers")
+  }
+
+  function setDesserts(){
+    setKey("desserts")
+  }
+
+  function setPizza(){
+    setKey("pizza")
+  }
+
   return {
     products,
     total,
@@ -85,5 +100,8 @@ export default function Shop() {
 
     addToCart,
     handleDeleteToCart,
+    setBurgers,
+    setDesserts,
+    setPizza,
   };
 }

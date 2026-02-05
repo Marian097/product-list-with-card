@@ -11,15 +11,18 @@ type Props = {
     length:number,
     isNothingInCart: boolean,
     addToCart: (product: Prod) => void,
-    handleDeleteToCart: (id: string) => void
+    handleDeleteToCart: (id: string) => void,
+    setBurgers: () => void,
+    setDesserts: () => void,
+    setPizza: () => void,
 }
 
 
 
-export default function Home({products, cart, total, length, isNothingInCart, addToCart, handleDeleteToCart} : Props) {
+export default function Home({products, cart, total, length, isNothingInCart, addToCart, handleDeleteToCart, setBurgers, setDesserts, setPizza } : Props) {
   return (
     <main className = "flex md:justify-center">
-        <Menu products = {products} addToCart = {addToCart} isNothingInCart = {isNothingInCart} cart = {cart}/>
+        <Menu products = {products} addToCart = {addToCart} isNothingInCart = {isNothingInCart} cart = {cart} setBurgers = {setBurgers} setDesserts = {setDesserts}  setPizza = {setPizza}/>
         <Cart cart = {cart} total = {total} length = {length} isNothingInCart = {isNothingInCart} handleDeleteToCart = {handleDeleteToCart}/>
     </main>
   )
