@@ -988,5 +988,475 @@
       "weight": 505,
       "calories": 860
     }
+  ],
+  "grill": [
+    {
+      "id": "grill-1",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg"
+      },
+      "name": "Ceafă de Porc la Grătar",
+      "category": "Pork",
+      "price": 11.5,
+      "ingredients": [
+        { "name": "Pork neck", "weight": 220 },
+        { "name": "Salt", "weight": 5 },
+        { "name": "Pepper", "weight": 3 },
+        { "name": "Garlic", "weight": 5 }
+      ],
+      "weight": 240,
+      "calories": 620
+    },
+    {
+      "id": "grill-2",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg"
+      },
+      "name": "Mici la Grătar",
+      "category": "Traditional",
+      "price": 9,
+      "ingredients": [
+        { "name": "Minced meat", "weight": 200 },
+        { "name": "Garlic", "weight": 10 },
+        { "name": "Spices", "weight": 5 }
+      ],
+      "weight": 210,
+      "calories": 550
+    },
+    {
+      "id": "grill-3",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Piept de Pui la Grătar",
+      "category": "Chicken",
+      "price": 10,
+      "ingredients": [
+        { "name": "Chicken breast", "weight": 200 },
+        { "name": "Olive oil", "weight": 10 },
+        { "name": "Spices", "weight": 5 }
+      ],
+      "weight": 215,
+      "calories": 430
+    },
+
+    {
+      "id": "grill-4",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg"
+      },
+      "name": "Cârnați de Casă",
+      "category": "Sausage",
+      "price": 9.5,
+      "ingredients": [
+        { "name": "Pork meat", "weight": 200 },
+        { "name": "Garlic", "weight": 8 },
+        { "name": "Paprika", "weight": 5 }
+      ],
+      "weight": 215,
+      "calories": 600
+    },
+
+    {
+      "id": "grill-5",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/2232/vegetables-italian-pizza-restaurant.jpg?w=200",
+        "mobile": "https://images.pexels.com/photos/2232/vegetables-italian-pizza-restaurant.jpg?w=400",
+        "tablet": "https://images.pexels.com/photos/2232/vegetables-italian-pizza-restaurant.jpg?w=800",
+        "desktop": "https://images.pexels.com/photos/2232/vegetables-italian-pizza-restaurant.jpg"
+      },
+      "name": "Legume la Grătar",
+      "category": "Vegetarian",
+      "price": 7,
+      "ingredients": [
+        { "name": "Zucchini", "weight": 80 },
+        { "name": "Peppers", "weight": 70 },
+        { "name": "Eggplant", "weight": 60 }
+      ],
+      "weight": 210,
+      "calories": 220
+    },
+
+    {
+      "id": "grill-6",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Burger la Grătar",
+      "category": "Beef",
+      "price": 12,
+      "ingredients": [
+        { "name": "Beef patty", "weight": 180 },
+        { "name": "Spices", "weight": 5 }
+      ],
+      "weight": 190,
+      "calories": 700
+    },
+
+    {
+      "id": "grill-7",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Coaste BBQ",
+      "category": "Pork",
+      "price": 14,
+      "ingredients": [
+        { "name": "Beef patty", "weight": 180 },
+        { "name": "Spices", "weight": 5 }
+      ],
+      "weight": 350,
+      "calories": 820
+    },
+
+    {
+      "id": "grill-8",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Pastramă de Pui",
+      "category": "Chicken",
+      "price": 11,
+      "ingredients": [
+        { "name": "Beef patty", "weight": 180 },
+        { "name": "Spices", "weight": 5 }
+      ],
+      "weight": 260,
+      "calories": 520
+    },
+
+    {
+      "id": "grill-9",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Frigărui Mixte",
+      "category": "Mixed",
+      "price": 13,
+      "ingredients": [
+        { "name": "Beef patty", "weight": 180 },
+        { "name": "Spices", "weight": 5 }
+      ],
+      "weight": 300,
+      "calories": 750
+    }
+  ],
+  
+  "garnish": [
+    {
+      "id": "side-1",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Cartofi Prajiti",
+      "category": "Potatoes",
+      "price": 4,
+      "ingredients": [
+        { "name": "Beef patty", "weight": 180 },
+        { "name": "Spices", "weight": 5 }
+      ],
+      "weight": 150,
+      "calories": 360
+    },
+    {
+      "id": "side-2",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Piure de Cartofi",
+      "category": "Potatoes",
+      "price": 4.5,
+      "ingredients": [
+        { "name": "Beef patty", "weight": 180 },
+        { "name": "Spices", "weight": 5 }
+      ],
+      "weight": 180,
+      "calories": 290
+    },
+    {
+      "id": "side-3",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Salată Coleslaw",
+      "category": "Salad",
+      "price": 3.5,
+      "ingredients": [
+        { "name": "Beef patty", "weight": 180 },
+        { "name": "Spices", "weight": 5 }
+      ],
+      "weight": 140,
+      "calories": 210
+    },
+    {
+      "id": "side-4",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Orez cu Legume",
+      "category": "Rice",
+      "price": 4,
+      "ingredients": [
+        { "name": "Beef patty", "weight": 180 },
+        { "name": "Spices", "weight": 5 }
+      ],
+      "weight": 160,
+      "calories": 250
+    },
+    {
+      "id": "side-5",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Salată Verde",
+      "category": "Salad",
+      "price": 3,
+      "ingredients": [
+        { "name": "Beef patty", "weight": 180 },
+        { "name": "Spices", "weight": 5 }
+      ],
+      "weight": 120,
+      "calories": 90
+    },
+    {
+      "id": "side-6",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Cartofi Copți",
+      "category": "Potatoes",
+      "price": 4.5,
+      "ingredients": [
+        { "name": "Beef patty", "weight": 180 },
+        { "name": "Spices", "weight": 5 }
+      ],
+      "weight": 170,
+      "calories": 280
+    },
+    {
+      "id": "side-7",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Murături",
+      "category": "Pickles",
+      "price": 3,
+      "ingredients": [
+        { "name": "Beef patty", "weight": 180 },
+        { "name": "Spices", "weight": 5 }
+      ],
+      "weight": 100,
+      "calories": 60
+    },
+    {
+      "id": "side-8",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Ciuperci Sotate",
+      "category": "Vegetarian",
+      "price": 4,
+      "ingredients": [
+        { "name": "Beef patty", "weight": 180 },
+        { "name": "Spices", "weight": 5 }
+      ],
+      "weight": 130,
+      "calories": 190
+    },
+    {
+      "id": "side-9",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Salată de Varză",
+      "category": "Salad",
+      "price": 3.5,
+      "ingredients": [
+        { "name": "Beef patty", "weight": 180 },
+        { "name": "Spices", "weight": 5 }
+      ],
+      "weight": 150,
+      "calories": 130
+    }
+  ],
+
+  "drinks": [
+    {
+      "id": "drink-1",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Coca-Cola",
+      "category": "Soft Drink",
+      "price": 3,
+      "weight": 330,
+      "calories": 140
+    },
+    {
+      "id": "drink-2",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Fanta",
+      "category": "Soft Drink",
+      "price": 3,
+      "weight": 330,
+      "calories": 150
+    },
+    {
+      "id": "drink-3",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Apă Platã",
+      "category": "Water",
+      "price": 2,
+      "weight": 500,
+      "calories": 0
+    },
+    {
+      "id": "drink-4",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Apă Minerală",
+      "category": "Water",
+      "price": 2,
+      "weight": 500,
+      "calories": 0
+    },
+    {
+      "id": "drink-5",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Bere Blondă",
+      "category": "Beer",
+      "price": 4,
+      "weight": 500,
+      "calories": 210
+    },
+    {
+      "id": "drink-6",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Bere Brună",
+      "category": "Beer",
+      "price": 4.5,
+      "weight": 500,
+      "calories": 230
+    },
+    {
+      "id": "drink-7",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Limonadă",
+      "category": "Fresh",
+      "price": 3.5,
+      "weight": 400,
+      "calories": 120
+    },
+    {
+      "id": "drink-8",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Ice Tea",
+      "category": "Tea",
+      "price": 3,
+      "weight": 330,
+      "calories": 110
+    },
+    {
+      "id": "drink-9",
+      "image": {
+        "thumbnail": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=200",
+        "mobile": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=400",
+        "tablet": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg?w=800",
+        "desktop": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg"
+      },
+      "name": "Cafea Espresso",
+      "category": "Coffee",
+      "price": 2.5,
+      "weight": 60,
+      "calories": 5
+    }
   ]
 }

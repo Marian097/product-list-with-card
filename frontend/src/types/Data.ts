@@ -6,4 +6,7 @@ export type DataApi = {
     desserts: Prod[],
     burgers: Prod[],
     pizza: Prod[],
+    grill: Prod[],
+    garnish: Prod[],
+    drinks: Prod[],
 };

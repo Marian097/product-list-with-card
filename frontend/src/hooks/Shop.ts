@@ -5,7 +5,7 @@ import type { CartType } from "@/types/CartType";
 
 
 
-type Key = "desserts" | "burgers" | "pizza";
+type Key = "desserts" | "burgers" | "pizza" | "grill" | "garnish" | "drinks";
 
 
 export default function Shop() {
@@ -15,6 +15,7 @@ export default function Shop() {
   const [cart, setCart] = useState<CartType[]>([]);
   const [length, setLength] = useState(0);
   const [isNothingInCart, setIsNothingInCart] = useState(false)
+  const [isDrinks, setIsDrinks] = useState(false);
 
   const total = useMemo(() => {
     return cart.reduce((sum, val) => sum + val.subtotal, 0);
@@ -33,13 +34,15 @@ export default function Shop() {
   }, [data, key]);
 
 
-  console.log(data)
-
 
   useEffect(() => {
     if (cart.length === 0) setIsNothingInCart(true);
       console.log(cart)
   }, [cart])
+
+  useEffect (() => {
+    if (key === "drinks") setIsDrinks(true);
+  }, [key])
 
 
   function addToCart(item: Prod) {
@@ -91,17 +94,36 @@ export default function Shop() {
     setKey("pizza")
   }
 
+
+  function setGrill(){
+    setKey("grill")
+  }
+
+
+  function setGarnish(){
+    setKey("garnish")
+  }
+
+
+  function setDrinks(){
+    setKey("drinks")
+  }
+
   return {
     products,
     total,
     cart,
     length,
     isNothingInCart,
+    isDrinks,
 
     addToCart,
     handleDeleteToCart,
     setBurgers,
     setDesserts,
     setPizza,
+    setGrill,
+    setGarnish,
+    setDrinks,  
   };
 }

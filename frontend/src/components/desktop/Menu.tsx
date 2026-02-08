@@ -2,37 +2,79 @@ import Products from "./Products";
 import type { Prod } from "@/types/Products";
 import type { CartType } from "@/types/CartType";
 
+
 type ProdProps = {
   products: Prod[];
   cart: CartType[];
   isNothingInCart: boolean;
+  isDrinks: boolean;
   addToCart: (products: Prod) => void;
   setBurgers: () => void;
   setDesserts: () => void;
   setPizza: () => void;
+  setGarnish: () => void;
+  setGrill: () => void;
+  setDrinks: () => void;
 };
 
 export default function Menu({
   products,
-  addToCart,
   isNothingInCart,
+  isDrinks,
+  addToCart,
   setBurgers,
   setDesserts,
   setPizza,
+  setGarnish,
+  setGrill,
+  setDrinks,
 }: ProdProps) {
   return (
-    <div>
-      <div className="flex md:pt-20 md:pb-10 gap-x-16 cursor-pointer">
-        <button className="font-bold md:text-4xl hover:underline underline-offset-8" onClick = {() => setDesserts()}>Desserts</button>
-        <button className="font-bold md:text-4xl hover:underline underline-offset-8" onClick = {() => setBurgers()}>Burgers</button>
-        <button className="font-bold md:text-4xl hover:underline underline-offset-8" onClick = {() => setPizza()}>Pizza</button>
+    <div className="w-full">
+      <div className="flex justify-center py-16 md:gap-x-4 gap-x-2 cursor-pointer text-sm lg:text-lg">
+        <button
+          className="font-bold md:text-4xl hover:underline underline-offset-8  text-white"
+          onClick={() => setDesserts()}
+        >
+          Desserts
+        </button>
+        <button
+          className="font-bold md:text-4xl hover:underline underline-offset-8  text-white"
+          onClick={() => setBurgers()}
+        >
+          Burgers
+        </button>
+        <button
+          className="font-bold md:text-4xl hover:underline underline-offset-8  text-white"
+          onClick={() => setPizza()}
+        >
+          Pizza
+        </button>
+        <button
+          className="font-bold md:text-4xl hover:underline underline-offset-8  text-white"
+          onClick={() => setGrill()}
+        >
+          Grill
+        </button>
+        <button
+          className="font-bold md:text-4xl hover:underline underline-offset-8  text-white"
+          onClick={() => setGarnish()}
+        >
+          Garnish
+        </button>
+        <button
+          className="font-bold md:text-4xl hover:underline underline-offset-8  text-white"
+          onClick={() => setDrinks()}
+        >
+          Drinks
+        </button>
       </div>
-
-      <Products
-        products={products}
-        addToCart={addToCart}
-        isNothingInCart={isNothingInCart}
-      />
-    </div>
+          <Products
+            products={products}
+            addToCart={addToCart}
+            isNothingInCart={isNothingInCart}
+            isDrinks={isDrinks}
+          />
+      </div>
   );
 }

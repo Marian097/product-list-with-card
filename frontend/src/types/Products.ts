@@ -16,7 +16,7 @@ export type Prod = {
     id: string,
     image: ImageSet,
     category: string,
-    ingredients: Ingredients[],
+    ingredients?: Ingredients[],
     name:string,
     weight:number,
     calories: number,
