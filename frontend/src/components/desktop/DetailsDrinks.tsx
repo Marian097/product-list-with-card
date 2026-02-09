@@ -8,7 +8,7 @@ type ProductsProp = {
 
 export default function DetailsFood({ products, addToCart }: ProductsProp) {
   return (
-    <div className="w-2/4 flex flex-wrap justify-center mx-auto gap-10">
+    <div className="lg:w-2/4 flex flex-wrap justify-center mx-auto gap-10">
       {products.map((p) => (
         <div key={p.id}>
           {/* Image wrapper */}
@@ -27,7 +27,7 @@ export default function DetailsFood({ products, addToCart }: ProductsProp) {
                 <img
                   src={p.image.desktop}
                   alt={p.name}
-                  className="lg:max-w-[320px] sm:max-w-[240px] rounded-xl"
+                  className="[backface-visibility:hidden] lg:w-[320px] md:w-[220px]"
                 />
               </div>
               <div>

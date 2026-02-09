@@ -16,6 +16,7 @@ export default function Shop() {
   const [length, setLength] = useState(0);
   const [isNothingInCart, setIsNothingInCart] = useState(false)
   const [isDrinks, setIsDrinks] = useState(false);
+  const [isOpenCart, setIsOpenCart] = useState(false);
 
   const total = useMemo(() => {
     return cart.reduce((sum, val) => sum + val.subtotal, 0);
@@ -109,6 +110,17 @@ export default function Shop() {
     setKey("drinks")
   }
 
+  function handleOpenCart(){
+    if (isOpenCart)
+    {
+      setIsOpenCart(false)
+    }
+    else{
+      setIsOpenCart(true)
+    }
+    
+  }
+
   return {
     products,
     total,
@@ -116,6 +128,7 @@ export default function Shop() {
     length,
     isNothingInCart,
     isDrinks,
+    isOpenCart,
 
     addToCart,
     handleDeleteToCart,
@@ -124,6 +137,7 @@ export default function Shop() {
     setPizza,
     setGrill,
     setGarnish,
-    setDrinks,  
+    setDrinks,
+    handleOpenCart  
   };
 }

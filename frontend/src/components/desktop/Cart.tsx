@@ -11,10 +11,10 @@ type Props = {
 };
 export default function Cart({ cart, total, length, isNothingInCart, handleDeleteToCart}: Props) {
   return (
-    <div className="pt-20">
-      <div className="flex flex-col bg-white max-h-screen w-64 rounded-md ml-6">
+    <div className = "">
+      <div className="flex h-full w-full flex-col bg-black rounded-md">
         <div className="py-4 pl-5">
-          <h2 className="text-xl font-bold text-red-700">
+          <h2 className="sm:text-xl text-xs font-bold text-red-700">
             Your Cart({length})
           </h2>
         </div>
@@ -23,7 +23,7 @@ export default function Cart({ cart, total, length, isNothingInCart, handleDelet
             <ContentCart cart={cart} handleDeleteToCart = {handleDeleteToCart}/>
           </div>
         ) : (
-          <div className="flex">
+          <div className="h-40 overflow-auto">
             <ContentCart cart={cart} handleDeleteToCart = {handleDeleteToCart}/>
           </div>
         )}
@@ -45,11 +45,11 @@ export default function Cart({ cart, total, length, isNothingInCart, handleDelet
             </div>
           </div>
           <div className="flex flex-wrap py-5">
-            <div className="flex gap-x-2 items-center mb-6 bg-red-50 h-10 w-52 rounded-md mx-auto">
+            <div className="sm:flex hidden gap-x-2 items-center mb-6 bg-red-50 h-10 w-52 rounded-md mx-auto">
               <div>
                 <img src={carbonNeutral} alt="" />
               </div>
-              <div className="text-sm">
+              <div className="sm:text-sm text-xs">
                 <span>
                   This is a<span>carbon-neutral</span>
                   delivery
@@ -58,8 +58,8 @@ export default function Cart({ cart, total, length, isNothingInCart, handleDelet
             </div>
             <div className="flex justify-center items-center bg-red-900 h-10 w-52 rounded-full mx-auto">
               <div>
-                <button>
-                  <span className="text-white">Confirm Order</span>
+                <button className = "w-[50px] h-[10px]">
+                  <span className="text-white sm:text-sm text-xs">Confirm Order</span>
                 </button>
               </div>
             </div>

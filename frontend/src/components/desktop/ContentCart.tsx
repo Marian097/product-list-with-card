@@ -2,7 +2,7 @@ import removeIcon from "@/assets/images/icon-remove-item.svg";
 import type { CartType } from "@/types/CartType";
 
 type Props = {
-  cart: CartType[],
+  cart: CartType[];
   handleDeleteToCart: (id: string) => void;
 };
 
@@ -12,14 +12,14 @@ export default function ContentCart({cart, handleDeleteToCart,} : Props) {
         {cart.map((items) => (
           <div key={items.id} className="flex flex-col pl-5">
             <div>
-              <h3 className="text-md font-bold">{items.name}</h3>
+              <h3 className="sm:text-md text-xs text-white font-bold">{items.name}</h3>
             </div>
             <div className="flex gap-x-2 pb-4">
               <div>
                 <span className="text-red-700">{items.quantity}x</span>
               </div>
               <div>
-                <span className="text-gray-800 opacity-50">
+                <span className="text-white opacity-50">
                   @${items.price}
                 </span>
               </div>

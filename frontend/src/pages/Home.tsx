@@ -1,12 +1,12 @@
 import Menu from "@/components/desktop/Menu";
 import type { Prod } from "@/types/Products";
-import type { CartType } from "@/types/CartType";
+
+import menuImg from "@/assets/images/hero-image.png"
 
 type Props = {
   products: Prod[];
-  cart: CartType[];
-  isNothingInCart: boolean;
   isDrinks: boolean;
+  isNothingInCart: boolean;
   addToCart: (product: Prod) => void;
   setBurgers: () => void;
   setDesserts: () => void;
@@ -18,9 +18,8 @@ type Props = {
 
 export default function Home({
   products,
-  cart,
-  isNothingInCart,
   isDrinks,
+  isNothingInCart,
   addToCart,
   setBurgers,
   setDesserts,
@@ -30,12 +29,11 @@ export default function Home({
   setDrinks,
 }: Props) {
   return (
-    <main className="flex md:justify-center menu">
+    <main className="flex md:justify-center bg-center min-h-screen bg-fixed bg-no-repeat bg-cover w-full" style = {{backgroundImage: `url(${menuImg})`}}>
       <Menu
         products={products}
+        isNothingInCart = {isNothingInCart}
         addToCart={addToCart}
-        isNothingInCart={isNothingInCart}
-        cart={cart}
         setBurgers={setBurgers}
         setDesserts={setDesserts}
         setPizza={setPizza}

@@ -1,11 +1,9 @@
 import Products from "./Products";
 import type { Prod } from "@/types/Products";
-import type { CartType } from "@/types/CartType";
 
 
 type ProdProps = {
   products: Prod[];
-  cart: CartType[];
   isNothingInCart: boolean;
   isDrinks: boolean;
   addToCart: (products: Prod) => void;
@@ -30,8 +28,8 @@ export default function Menu({
   setDrinks,
 }: ProdProps) {
   return (
-    <div className="w-full">
-      <div className="flex justify-center py-16 md:gap-x-4 gap-x-2 cursor-pointer text-sm lg:text-lg">
+    <div className="w-full py-40">
+      <div className="flex justify-center py-16 md:gap-x-7 gap-x-2 cursor-pointer text-sm lg:text-lg">
         <button
           className="font-bold md:text-4xl hover:underline underline-offset-8  text-white"
           onClick={() => setDesserts()}
