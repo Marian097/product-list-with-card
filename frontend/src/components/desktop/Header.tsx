@@ -3,6 +3,7 @@ import Cart from "@/components/desktop/Cart";
 import type { CartType } from "@/types/CartType";
 import addToCart from "@/assets/images/shopping-cart.png";
 
+
 type Props = {
   cart: CartType[];
   total: number;
@@ -28,51 +29,36 @@ export default function Header({
         <div className="">
           <img src={logo} className="md:h-40 h-28" />
         </div>
-        <div className="hidden sm:flex items-center gap-x-7 font-bold pr-24 cursor-pointer">
-          <div>
-            <span className="text-white">About</span>
-          </div>
-          <div>
-            <span className="text-white">Menu</span>
-          </div>
-          <div>
-            <span className="text-white">Gallery</span>
-          </div>
-          <div>
-            <span className="text-white">Blog</span>
-          </div>
-          <div>
-            <span className="text-white">Contact Us</span>
-          </div>
+        <div className="absolute right-16 sm:right-10 top-9">
+          <img
+            src={addToCart}
+            className="sm:w-14 w-10"
+            onClick={() => handleOpenCart()}
+          />
+          {isOpenCart ? (
+            <div className="absolute right-0 top-full mt-3 w-60 max-h-[100vh] overflow-y-scroll sm:overflow-hidden sm:max-h-[70vh] custom-scroll  animate-cart-drop
+      origin-top
+      z-50">
+              <Cart
+                cart={cart}
+                total={total}
+                length={length}
+                isNothingInCart={isNothingInCart}
+                handleDeleteToCart={handleDeleteToCart}
+              />
+            </div>
+          ) : (
+            <div className="hidden">
+              <Cart
+                cart={cart}
+                total={total}
+                length={length}
+                isNothingInCart={isNothingInCart}
+                handleDeleteToCart={handleDeleteToCart}
+              />
+            </div>
+          )}
         </div>
-        <div className = "absolute right-7 top-9">
-            <img
-              src={addToCart}
-              className="sm:w-14 w-10"
-              onClick={() => handleOpenCart()}
-            />
-            {isOpenCart ? (
-              <div className = "absolute right-0 top-full mt-3 w-72 max-h-[15vh] overflow-scroll sm:max-h-[70vh]">
-                <Cart
-                  cart={cart}
-                  total={total}
-                  length={length}
-                  isNothingInCart={isNothingInCart}
-                  handleDeleteToCart={handleDeleteToCart}
-                />
-              </div>
-            ) : (
-              <div className = "hidden">
-                <Cart
-                  cart={cart}
-                  total={total}
-                  length={length}
-                  isNothingInCart={isNothingInCart}
-                  handleDeleteToCart={handleDeleteToCart}
-                />
-              </div>
-            )}
-          </div>
       </header>
     </div>
   );

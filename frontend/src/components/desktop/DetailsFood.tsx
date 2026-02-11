@@ -8,7 +8,7 @@ type ProductsProp = {
 
 export default function DetailsFood({ products, addToCart }: ProductsProp) {
   return (
-    <div className="lg:w-2/4 flex flex-wrap justify-center mx-auto gap-10">
+    <div className="w-full sm:max-w-5xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto justify-items-center">
       {products.map((p) => (
         <div key={p.id}>
           {/* Image wrapper */}
@@ -23,11 +23,11 @@ export default function DetailsFood({ products, addToCart }: ProductsProp) {
               "
             >
               {/* FRONT - Image */}
-              <div className="[backface-visibility:hidden] lg:w-[320px] md:w-[220px]">
+              <div className="[backface-visibility:hidden]">
                 <img
                   src={p.image.desktop}
                   alt={p.name}
-                  className="md:aspect-[4/3] max-h-[200px] overflow-hidden rounded-xl"
+                  className="w-full aspect-[4/3] max-h-[200px] object-cover rounded-xl"
                 />
 
                 <div className="">
@@ -57,7 +57,7 @@ export default function DetailsFood({ products, addToCart }: ProductsProp) {
                  flex flex-col items-center justify-center
                  text-center px-4
                  [backface-visibility:hidden]
-                 [transform:rotateY(180deg)]"
+                 [transform:rotateY(180deg)] mx-auto"
               >
                 <h3 className="font-semibold text-sm mb-2">{p.name}</h3>
                 <p className="text-xs opacity-70 mb-2">
@@ -84,7 +84,7 @@ export default function DetailsFood({ products, addToCart }: ProductsProp) {
               </div>
             </div>
           </div>
-          <div className = "flex justify-center mr-16">
+          <div className = "flex justify-center">
             <div className="flex justify-center mt-5">
               <button
                 className="flex justify-center lg:w-[150px] lg:h-[30px] w-[100px] h-[30px] items-center border bg-white rounded-xl border-red-700"

@@ -1,6 +1,5 @@
 import Menu from "@/components/desktop/Menu";
 import type { Prod } from "@/types/Products";
-
 import menuImg from "@/assets/images/hero-image.png"
 
 type Props = {

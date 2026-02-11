@@ -8,7 +8,7 @@ type ProductsProp = {
 
 export default function DetailsFood({ products, addToCart }: ProductsProp) {
   return (
-    <div className="lg:w-2/4 flex flex-wrap justify-center mx-auto gap-10">
+    <div className="w-full sm:max-w-5xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto justify-items-center">
       {products.map((p) => (
         <div key={p.id}>
           {/* Image wrapper */}
@@ -27,22 +27,8 @@ export default function DetailsFood({ products, addToCart }: ProductsProp) {
                 <img
                   src={p.image.desktop}
                   alt={p.name}
-                  className="[backface-visibility:hidden] lg:w-[320px] md:w-[220px]"
+                  className="w-full aspect-[4/3] max-h-[200px] object-cover rounded-xl"
                 />
-              </div>
-              <div>
-                <div className="flex justify-center">
-                  <button
-                    className="flex justify-center lg:w-[150px] lg:h-[30px] w-[100px] h-[30px] items-center border bg-white rounded-xl border-red-700"
-                    onClick={() => addToCart(p)}
-                  >
-                    <span>
-                      <img src={Add} className="w-4 h-4 sm:w-5 sm:h-5" />
-                    </span>
-
-                    <span className="whitespace-nowrap text-xs">Add to cart</span>
-                  </button>
-                </div>
               </div>
 
               {/* Text */}
@@ -67,6 +53,7 @@ export default function DetailsFood({ products, addToCart }: ProductsProp) {
               {/* BACK - Content */}
               <div
                 className="
+                max-w-[300px]
                 absolute inset-0
                  bg-white rounded-xl
                  flex flex-col items-center justify-center
@@ -84,6 +71,20 @@ export default function DetailsFood({ products, addToCart }: ProductsProp) {
                   </span>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className = "flex justify-center">
+            <div className="flex justify-center mt-5">
+              <button
+                className="flex justify-center lg:w-[150px] lg:h-[30px] w-[100px] h-[30px] items-center border bg-white rounded-xl border-red-700"
+                onClick={() => addToCart(p)}
+              >
+                <span>
+                  <img src={Add} className="w-4 h-4 sm:w-5 sm:h-5" />
+                </span>
+
+                <span className="whitespace-nowrap text-xs">Add to cart</span>
+              </button>
             </div>
           </div>
         </div>

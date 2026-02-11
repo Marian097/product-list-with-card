@@ -9,10 +9,16 @@ type Props = {
   isNothingInCart: boolean;
   handleDeleteToCart: (id: string) => void;
 };
-export default function Cart({ cart, total, length, isNothingInCart, handleDeleteToCart}: Props) {
+export default function Cart({
+  cart,
+  total,
+  length,
+  isNothingInCart,
+  handleDeleteToCart,
+}: Props) {
   return (
-    <div className = "">
-      <div className="flex h-full w-full flex-col bg-black rounded-md">
+    <div>
+      <div className="flex h-full w-full flex-col  bg-black/40 rounded-md">
         <div className="py-4 pl-5">
           <h2 className="sm:text-xl text-xs font-bold text-red-700">
             Your Cart({length})
@@ -20,17 +26,17 @@ export default function Cart({ cart, total, length, isNothingInCart, handleDelet
         </div>
         {isNothingInCart ? (
           <div className="none">
-            <ContentCart cart={cart} handleDeleteToCart = {handleDeleteToCart}/>
+            <ContentCart cart={cart} handleDeleteToCart={handleDeleteToCart} />
           </div>
         ) : (
           <div className="h-40 overflow-auto">
-            <ContentCart cart={cart} handleDeleteToCart = {handleDeleteToCart}/>
+            <ContentCart cart={cart} handleDeleteToCart={handleDeleteToCart} />
           </div>
         )}
         <div className="flex flex-col">
           <div className="flex">
             <div className="ml-5">
-              <span>Order Total:</span>
+              <span className="text-white font-bold">Order Total:</span>
             </div>
             <div className="ml-auto mr-7">
               {total === 0 ? (
@@ -39,7 +45,7 @@ export default function Cart({ cart, total, length, isNothingInCart, handleDelet
                 </>
               ) : (
                 <>
-                  <span className="flex font-bold">${total}</span>
+                  <span className="flex font-bold text-white">${total}</span>
                 </>
               )}
             </div>
@@ -56,12 +62,16 @@ export default function Cart({ cart, total, length, isNothingInCart, handleDelet
                 </span>
               </div>
             </div>
-            <div className="flex justify-center items-center bg-red-900 h-10 w-52 rounded-full mx-auto">
-              <div>
-                <button className = "w-[50px] h-[10px]">
-                  <span className="text-white sm:text-sm text-xs">Confirm Order</span>
-                </button>
-              </div>
+            <div></div>
+            <div className="flex justify-center bg-red-900 h-8 w-20 sm:h-10 sm:w-40 rounded-full mx-auto border-rose-600 border">
+              <button className="sm:w-[50px] sm:h-[10px] text-white sm:text-sm text-xs ">
+                  Confirm Order
+              </button>
+            </div>
+            <div className="flex justify-center bg-red-900 h-8 w-20 sm:h-10 sm:w-40 rounded-full mx-auto border-rose-600 border mt-2">
+              <button className="sm:w-[50px] sm:h-[10px] text-white sm:text-sm text-xs ">
+                  Continue Order
+              </button>
             </div>
           </div>
         </div>

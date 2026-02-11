@@ -18,6 +18,7 @@ export default function Shop() {
   const [isDrinks, setIsDrinks] = useState(false);
   const [isOpenCart, setIsOpenCart] = useState(false);
 
+
   const total = useMemo(() => {
     return cart.reduce((sum, val) => sum + val.subtotal, 0);
   }, [cart]);
@@ -118,8 +119,8 @@ export default function Shop() {
     else{
       setIsOpenCart(true)
     }
-    
   }
+
 
   return {
     products,
@@ -130,6 +131,7 @@ export default function Shop() {
     isDrinks,
     isOpenCart,
 
+
     addToCart,
     handleDeleteToCart,
     setBurgers,
@@ -138,6 +140,7 @@ export default function Shop() {
     setGrill,
     setGarnish,
     setDrinks,
-    handleOpenCart  
+    handleOpenCart ,
+  
   };
 }
