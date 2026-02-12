@@ -4,7 +4,7 @@ export default function TfootTable() {
     <tfoot>
         <tr>
             <td>Total</td>
-            <td>121033 lei</td>
+            <td>1210 lei</td>
         </tr>
     </tfoot>
   )

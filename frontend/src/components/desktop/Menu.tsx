@@ -7,12 +7,7 @@ type ProdProps = {
   isNothingInCart: boolean;
   isDrinks: boolean;
   addToCart: (products: Prod) => void;
-  setBurgers: () => void;
-  setDesserts: () => void;
-  setPizza: () => void;
-  setGarnish: () => void;
-  setGrill: () => void;
-  setDrinks: () => void;
+  setOption: (option: string) => void;
 };
 
 export default function Menu({
@@ -20,49 +15,44 @@ export default function Menu({
   isNothingInCart,
   isDrinks,
   addToCart,
-  setBurgers,
-  setDesserts,
-  setPizza,
-  setGarnish,
-  setGrill,
-  setDrinks,
+  setOption,
 }: ProdProps) {
   return (
     <div className="w-full py-40">
       <div className="flex justify-center py-16 md:gap-x-7 gap-x-2 cursor-pointer text-sm lg:text-lg">
         <button
           className="font-bold md:text-4xl hover:underline underline-offset-8  text-white"
-          onClick={() => setDesserts()}
+          onClick={() => setOption("desserts")}
         >
           Desserts
         </button>
         <button
           className="font-bold md:text-4xl hover:underline underline-offset-8  text-white"
-          onClick={() => setBurgers()}
+          onClick={() => setOption("burgers")}
         >
           Burgers
         </button>
         <button
           className="font-bold md:text-4xl hover:underline underline-offset-8  text-white"
-          onClick={() => setPizza()}
+          onClick={() => setOption("pizza")}
         >
           Pizza
         </button>
         <button
           className="font-bold md:text-4xl hover:underline underline-offset-8  text-white"
-          onClick={() => setGrill()}
+          onClick={() => setOption("grill")}
         >
           Grill
         </button>
         <button
           className="font-bold md:text-4xl hover:underline underline-offset-8  text-white"
-          onClick={() => setGarnish()}
+          onClick={() => setOption("garnish")}
         >
           Garnish
         </button>
         <button
           className="font-bold md:text-4xl hover:underline underline-offset-8  text-white"
-          onClick={() => setDrinks()}
+          onClick={() => setOption("drinks")}
         >
           Drinks
         </button>

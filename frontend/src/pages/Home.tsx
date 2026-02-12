@@ -7,12 +7,7 @@ type Props = {
   isDrinks: boolean;
   isNothingInCart: boolean;
   addToCart: (product: Prod) => void;
-  setBurgers: () => void;
-  setDesserts: () => void;
-  setPizza: () => void;
-  setGrill: () => void;
-  setGarnish: () => void;
-  setDrinks: () => void;
+  setOption: (option: string) => void;
 };
 
 export default function Home({
@@ -20,12 +15,7 @@ export default function Home({
   isDrinks,
   isNothingInCart,
   addToCart,
-  setBurgers,
-  setDesserts,
-  setPizza,
-  setGrill,
-  setGarnish,
-  setDrinks,
+  setOption,
 }: Props) {
   return (
     <main className="flex md:justify-center bg-center min-h-screen bg-fixed bg-no-repeat bg-cover w-full" style = {{backgroundImage: `url(${menuImg})`}}>
@@ -33,12 +23,7 @@ export default function Home({
         products={products}
         isNothingInCart = {isNothingInCart}
         addToCart={addToCart}
-        setBurgers={setBurgers}
-        setDesserts={setDesserts}
-        setPizza={setPizza}
-        setGrill={setGrill}
-        setGarnish={setGarnish}
-        setDrinks={setDrinks}
+        setOption = {setOption}
         isDrinks={isDrinks}
       />
     </main>

@@ -84,32 +84,11 @@ export default function Shop() {
   }
 
 
-  function setBurgers(){
-    setKey("burgers")
+  function setOption(option:string)
+  {
+    setKey(option as Key)
   }
 
-  function setDesserts(){
-    setKey("desserts")
-  }
-
-  function setPizza(){
-    setKey("pizza")
-  }
-
-
-  function setGrill(){
-    setKey("grill")
-  }
-
-
-  function setGarnish(){
-    setKey("garnish")
-  }
-
-
-  function setDrinks(){
-    setKey("drinks")
-  }
 
   function handleOpenCart(){
     if (isOpenCart)
@@ -120,6 +99,8 @@ export default function Shop() {
       setIsOpenCart(true)
     }
   }
+
+  
 
 
   return {
@@ -134,12 +115,7 @@ export default function Shop() {
 
     addToCart,
     handleDeleteToCart,
-    setBurgers,
-    setDesserts,
-    setPizza,
-    setGrill,
-    setGarnish,
-    setDrinks,
+    setOption,
     handleOpenCart ,
   
   };

@@ -7,7 +7,7 @@ import TfootTable from "@/components/desktop/TfootTable"
 export default function TableOrder() {
   return (
     <div className="w-full overflow-x-auto">
-        <table className = "table-auto w-full">
+        <table className = "table-auto w-full text-white">
           <TheadTable/>
           <TbodyTable/>
           <TfootTable/>
