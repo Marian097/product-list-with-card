@@ -8,6 +8,7 @@ type Props = {
   length: number;
   isNothingInCart: boolean;
   handleDeleteToCart: (id: string) => void;
+  handleConfirmOrder: () => void;
 };
 export default function Cart({
   cart,
@@ -15,10 +16,11 @@ export default function Cart({
   length,
   isNothingInCart,
   handleDeleteToCart,
+  handleConfirmOrder,
 }: Props) {
   return (
     <div>
-      <div className="flex h-full w-full flex-col  bg-black/40 rounded-md">
+      <div className="flex h-full w-full flex-col  bg-black/90 rounded-md">
         <div className="py-4 pl-5">
           <h2 className="sm:text-xl text-xs font-bold text-red-700">
             Your Cart({length})
@@ -63,14 +65,9 @@ export default function Cart({
               </div>
             </div>
             <div></div>
-            <div className="flex justify-center bg-red-900 h-8 w-20 sm:h-10 sm:w-40 rounded-full mx-auto border-rose-600 border">
-              <button className="sm:w-[50px] sm:h-[10px] text-white sm:text-sm text-xs ">
+            <div className="flex justify-center h-8 w-20 sm:h-10 sm:w-40 rounded-full mx-auto">
+              <button className="sm:w-[120px] sm:h-[45px] text-white sm:text-sm text-xs bg-red-800 rounded-lg px-2" onClick = {() => handleConfirmOrder()}>
                   Confirm Order
-              </button>
-            </div>
-            <div className="flex justify-center bg-red-900 h-8 w-20 sm:h-10 sm:w-40 rounded-full mx-auto border-rose-600 border mt-2">
-              <button className="sm:w-[50px] sm:h-[10px] text-white sm:text-sm text-xs ">
-                  Continue Order
               </button>
             </div>
           </div>

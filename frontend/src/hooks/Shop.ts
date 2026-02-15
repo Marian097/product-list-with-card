@@ -17,6 +17,8 @@ export default function Shop() {
   const [isNothingInCart, setIsNothingInCart] = useState(false)
   const [isDrinks, setIsDrinks] = useState(false);
   const [isOpenCart, setIsOpenCart] = useState(false);
+  const [isConfirmOrder, setIsConfirmOrder] = useState(false);
+  const [isBlur, setIsBlur] = useState(false);
 
 
   const total = useMemo(() => {
@@ -46,6 +48,13 @@ export default function Shop() {
     if (key === "drinks") setIsDrinks(true);
   }, [key])
 
+
+  useEffect(() => {
+    if (isOpenCart)
+    {
+      setIsBlur(true)
+    }
+  }, [isOpenCart])
 
   function addToCart(item: Prod) {
     setCart((prev) => {
@@ -100,6 +109,27 @@ export default function Shop() {
     }
   }
 
+  function handleConfirmOrder(){
+    if (cart.length === 0) return;
+
+    if (isConfirmOrder)
+    {
+      setIsConfirmOrder(false)
+    }
+    else {
+      setIsConfirmOrder(true)
+    }
+  }
+
+
+  function handleBackToMenu()
+  {
+    if (isConfirmOrder)
+    {
+      setIsConfirmOrder(false)
+    }
+  }
+
   
 
 
@@ -108,15 +138,18 @@ export default function Shop() {
     total,
     cart,
     length,
+    isBlur,
     isNothingInCart,
     isDrinks,
     isOpenCart,
+    isConfirmOrder,
 
 
     addToCart,
     handleDeleteToCart,
     setOption,
+    handleConfirmOrder,
     handleOpenCart ,
-  
+    handleBackToMenu,
   };
 }
