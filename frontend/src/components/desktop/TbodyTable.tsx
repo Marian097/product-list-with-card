@@ -4,24 +4,17 @@ type Props = {
   cart: CartType[];
 };
 
+
 export default function TbodyTable({ cart }: Props) {
   return (
     <tbody>
-      <tr>
-        {cart.map((p) => (
-          <div className = "grid grid-cols-4 gap-4">
-            <div className= "col-span-2">
-              <td>{p.name}</td>
-            </div>
-            <div>
-              <td>{p.quantity}x</td>
-            </div>
-            <div>
-              <td>{p.subtotal}$</td>
-            </div>
-          </div>
-        ))}
-      </tr>
+      {cart.map((p) => (
+        <tr key={p.id} className="grid grid-cols-4 gap-4">
+          <td className="col-span-2">{p.name}</td>
+          <td>{p.quantity}x</td>
+          <td>{p.subtotal}$</td>
+        </tr>
+      ))}
     </tbody>
   );
 }

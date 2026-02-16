@@ -10,7 +10,7 @@ type Props = {
   isNothingInCart: boolean;
   isOpenCart: boolean;
   handleDeleteToCart: (id: string) => void;
-  handleOpenCart: () => void;
+  toggleCart: () => void;
   handleConfirmOrder: () => void;
 };
 
@@ -21,26 +21,26 @@ export default function Header({
   isNothingInCart,
   isOpenCart,
   handleDeleteToCart,
-  handleOpenCart,
+  toggleCart,
   handleConfirmOrder,
 }: Props) {
   return (
     <div className="relative z-20">
       <header className="fixed top-0 left-0 right-0 z-40 flex md:justify-between md:items-center w-full h-24 md:h-36 bg-black/80 backdrop-blur-md">
         <div className="">
-          <img src={logo} className="md:h-40 h-20" />
+          <img src={logo} className="md:h-35 md:w-36 h-20" />
         </div>
         <div className="absolute right-16 sm:right-10 top-9">
           <img
             src={addToCart}
             className="sm:w-14 w-10"
-            onClick={() => handleOpenCart()}
+            onClick={() => toggleCart()}
           />
           {isOpenCart && (
             <div className="fixed inset-0 z-50">
               <div
                 className="absolute inset-0 bg-black/40"
-                onClick={handleOpenCart}
+                onClick={toggleCart}
               />
               <div className="absolute right-4 top-24 md:top-36 w-72 max-h-[calc(100dvh-6rem)] overflow-y-auto rounded-xl animate-cart-drop">
                 <Cart

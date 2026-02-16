@@ -44,6 +44,8 @@ export default function Shop() {
       console.log(cart)
   }, [cart])
 
+  
+  
   useEffect (() => {
     if (key === "drinks") setIsDrinks(true);
   }, [key])
@@ -98,16 +100,10 @@ export default function Shop() {
     setKey(option as Key)
   }
 
+  const openCart = () => setIsOpenCart(true);
+  const closeCart = () => setIsOpenCart(false);
+  const toggleCart = () => setIsOpenCart(prev => !prev);
 
-  function handleOpenCart(){
-    if (isOpenCart)
-    {
-      setIsOpenCart(false)
-    }
-    else{
-      setIsOpenCart(true)
-    }
-  }
 
   function handleConfirmOrder(){
     if (cart.length === 0) return;
@@ -149,7 +145,9 @@ export default function Shop() {
     handleDeleteToCart,
     setOption,
     handleConfirmOrder,
-    handleOpenCart ,
+    openCart,
+    closeCart,
+    toggleCart,
     handleBackToMenu,
   };
 }
