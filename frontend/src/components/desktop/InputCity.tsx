@@ -6,7 +6,7 @@ export default function InputCity() {
         <label htmlFor="" className = "font-medium text-white">City:</label>
       </div>
       <div>
-        <input type="text" className="border-2 border-black" />
+        <input type="text" className="border-2 border-black" name = "city" />
       </div>
     </div>
   );

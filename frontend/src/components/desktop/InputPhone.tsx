@@ -5,7 +5,7 @@ export default function InputPhone() {
         <label htmlFor="" className = "font-medium  text-white">Phone:</label>
       </div>
       <div>
-        <input type="text" name="" id="" className="border-2 border-black" />
+        <input type="text" name="phone" id="" className="border-2 border-black" />
       </div>
     </div>
   );

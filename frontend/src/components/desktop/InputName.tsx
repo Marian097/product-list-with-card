@@ -6,7 +6,7 @@ export default function InputName() {
       </div>
       <div>
         {" "}
-        <input type="text" className="border-2 border-black" />
+        <input type="text" className="border-2 border-black" name = "name" />
       </div>
     </div>
   );

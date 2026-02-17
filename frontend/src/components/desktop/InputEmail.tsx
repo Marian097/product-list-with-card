@@ -6,7 +6,7 @@ export default function InputEmail() {
         <label htmlFor="" className = "font-medium text-white ">Email:</label>
       </div>
       <div>
-        <input type="email" name="" id="" className="border-2 border-black" />
+        <input type="email" name="email" id="" className="border-2 border-black" />
       </div>
     </div>
   );

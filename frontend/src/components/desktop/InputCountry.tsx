@@ -6,7 +6,7 @@ export default function InputCountry() {
         <label htmlFor="" className = "font-medium  text-white">Country:</label>
       </div>
       <div>
-        <select name="" id="" className="border-2 border-black">
+        <select name="country" id="" className="border-2 border-black">
           <option value="Brasov">Brasov</option>
         </select>
       </div>

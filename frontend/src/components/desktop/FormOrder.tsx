@@ -4,7 +4,7 @@ import InputEmail from "@/components/desktop/InputEmail";
 import InputName from "@/components/desktop/InputName";
 import InputNoteOrder from "@/components/desktop/InputNoteOrder";
 import InputPhone from "@/components/desktop/InputPhone";
-import InputStreet from "@/components/desktop/InputStreet";
+import InputAddress from "@/components/desktop/InputAddress";
 import PaymentOption from "@/components/desktop/PaymentOption";
 import TableOrder from "@/components/desktop/TableOrder";
 import Undo from "@/assets/images/undo.png";
@@ -48,7 +48,7 @@ export default function FormOrder({total, cart, handleBackToMenu}:Props) {
                 <InputName />
               </div>
               <div>
-                <InputStreet />
+                <InputAddress />
               </div>
               <div>
                 <InputCity />
@@ -84,7 +84,7 @@ export default function FormOrder({total, cart, handleBackToMenu}:Props) {
             <InputName />
           </div>
           <div>
-            <InputStreet />
+            <InputAddress />
           </div>
           <div>
             <InputCity />
