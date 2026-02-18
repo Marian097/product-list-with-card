@@ -2,20 +2,20 @@ import { useState, useEffect, useMemo } from "react";
 import type { DataApi } from "@/types/Data";
 import type { Prod } from "@/types/Products";
 import type { CartType } from "@/types/CartType";
-import type { Address } from "@/types/Address";
+
 import * as yup from "yup";
 
 type Key = "desserts" | "burgers" | "pizza" | "grill" | "garnish" | "drinks";
 
 const orderSchema = yup.object({
   name: yup.string().required("Name is required"),
-  address: yup.object({
-    street: yup.string().required(),
-    number: yup.string().required(),
-    apartament: yup.string().required(),
-    floor: yup.string().required(),
-    scale: yup.string().optional(),
-  }),
+
+  street: yup.string().required(),
+  number: yup.string().required(),
+  apartament: yup.string().required(),
+  floor: yup.string().required(),
+  scale: yup.string().optional(),
+
   city: yup.string().required("City is required"),
   phone: yup
     .string()
@@ -37,21 +37,12 @@ export default function Shop() {
   const [isConfirmOrder, setIsConfirmOrder] = useState(false);
   const [isBlur, setIsBlur] = useState(false);
   const [name, setName] = useState<string>("");
-  const [address, setAddress] = useState<Address[]>([
-    {
-      street: "",
-      number: "",
-      apartament: "",
-      floor: "",
-      scale: "",
-    },
-  ]);
+  const [address, setAddress] = useState<string>("");
   const [city, setCity] = useState<string>("");
   const [country, setCountry] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [note, setNote] = useState<string>("");
-  const [scale, setScale] = useState<string>("");
 
   const total = useMemo(() => {
     return cart.reduce((sum, val) => sum + val.subtotal, 0);
@@ -156,33 +147,53 @@ export default function Shop() {
     }
   }
 
+  const parseAddress = (value: string) => {
+    const [street, number, apartament, floor, scale] = value
+      .split(",")
+      .map((s) => s.trim());
+    return {
+      street: street || "",
+      number: number || "",
+      apartament: apartament || "",
+      floor: floor || "",
+      scale: scale || "",
+    };
+  };
+
   async function placeOrder() {
+    const addr = parseAddress(address);
+
     const payload = {
-      name,
-      address,
-      city,
-      country,
-      phone,
-      email,
-      note,
+      name: name,
+      street: addr.street,
+      number: addr.number,
+      apartament: addr.apartament,
+      floor: addr.floor,
+      scale: addr.scale,
+      city: city,
+      country:country,
+      phone:phone,
+      email:email,
+      note:note,
       items: cart.map((p) => ({
-        product_id: p.id,
         name: p.name,
         quantity: p.quantity,
         price: p.price,
       })),
+      total: total,
     };
-    
-    await fetch("/api/orders", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
 
     try {
       const valid = await orderSchema.validate(payload, {
         abortEarly: false,
       });
+
+      await fetch("/api/orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
       console.log("OK, valid:", valid);
     } catch (err) {
       if (err instanceof yup.ValidationError) {
@@ -213,9 +224,8 @@ export default function Shop() {
     phone,
     email,
     note,
-    scale,
 
-    setScale,
+    placeOrder,
     setNote,
     setEmail,
     setPhone,

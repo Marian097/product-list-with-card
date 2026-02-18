@@ -1,16 +1,16 @@
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 
 from fastapi import FastAPI, Depends
-from pydantic import BaseModel, Field
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, Field, EmailStr
 
 from sqlalchemy import Integer, String, select, desc
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
+from sqlalchemy.dialects.sqlite import JSON  # <- pentru SQLite JSON
+import uuid
 
-# SQLite async URL (fișier local)
-DATABASE_URL = "sqlite+aiosqlite:///./app.db"
+DATABASE_URL = "sqlite+aiosqlite:///./test.db"
 
 engine = create_async_engine(DATABASE_URL, echo=False)
 SessionLocal = async_sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
@@ -18,55 +18,65 @@ SessionLocal = async_sessionmaker(engine, expire_on_commit=False, class_=AsyncSe
 class Base(DeclarativeBase):
     pass
 
-
 class CartItem(BaseModel):
     product_id: str
-    name:str
-    quantity: int = Field(gt = 0)
-    price: float = Field(gt = 0)
+    name: str
+    quantity: int = Field(gt=0)
+    price: float = Field(gt=0)
 
 # -------- MODEL (tabela orders) --------
 class Order(Base):
     __tablename__ = "orders"
-    id:Mapped[int] = mapped_column(Integer, primary_key = True)
-    name:Mapped[str] = mapped_column(String(100), nullable = False)
-    adress:Mapped[str] = mapped_column(String(200), nullable = False)
-    city:Mapped[str] = mapped_column(String(100), nullable = False)
-    country:Mapped[str] = mapped_column(String(100), nullable = False)
-    phone:Mapped[str] = mapped_column(String(10), nullable = False)
-    email:Mapped[str] = mapped_column(String, unique = False, index = True, nullable = False)
-    note:Mapped[str] = mapped_column(String(300))
-    items: list[CartItem] = Field(min_length=1)
 
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+
+    name: Mapped[str] = mapped_column(String(100), nullable=False)
+    street: Mapped[str] = mapped_column(String(200), nullable=False)
+    number: Mapped[str] = mapped_column(String(20), nullable=False)
+    apartament: Mapped[str] = mapped_column(String(20), nullable=False)
+    floor: Mapped[str] = mapped_column(String(20), nullable=False)
+    scale: Mapped[str] = mapped_column(String(20), nullable=False)
+    city: Mapped[str] = mapped_column(String(100), nullable=False)
+    country: Mapped[str] = mapped_column(String(100), nullable=False)
+    phone: Mapped[str] = mapped_column(String(20), nullable=False)
+    email: Mapped[str] = mapped_column(String(255), index=True, nullable=False)
+    note: Mapped[Optional[str]] = mapped_column(String(300), nullable=True)
+
+    # stocăm lista de item-uri ca JSON în DB
+    items: Mapped[list] = mapped_column(JSON, nullable=False)
 
 # -------- SCHEMAS (input/output) --------
 class OrderCreate(BaseModel):
-    name:str
-    adress:str
-    city:str
-    country:str
-    phone:str
+    name: str
+    street: str
+    number: str
+    apartament: str
+    floor: str
+    scale: str
+    city: str
+    country: str
+    phone: str
     email: EmailStr
     note: Optional[str] = None
-    quantity:Integer
-    items: list[CartItem] = Field(min_length=1)
-    
-    
-    
+    items: List[CartItem] = Field(min_length=1)
+
 class OrderOut(BaseModel):
-    id: int
-    name:str
-    adress:str
-    city:str
-    country:str
-    phone:str
+    id: str
+    name: str
+    street: str
+    number: str
+    apartament: str
+    floor: str
+    scale: str
+    city: str
+    country: str
+    phone: str
     email: EmailStr
     note: Optional[str] = None
-    quantity:Integer
-    items: list[CartItem] = Field(min_length=1)
-    
-    class Config:
-        from_attributes = True
+    items: List[CartItem]
+
+    model_config = {"from_attributes": True}
+
 # -------- FASTAPI --------
 app = FastAPI(title="Restaurant Orders API (SQLite)")
 
@@ -76,7 +86,6 @@ async def get_db():
 
 @app.on_event("startup")
 async def startup():
-    # creează tabelele dacă nu există
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
 
@@ -88,13 +97,17 @@ def health():
 async def create_order(payload: OrderCreate, db: AsyncSession = Depends(get_db)):
     order = Order(
         name=payload.name,
-        address=payload.adress,
-        city = payload.city,
-        country = payload.country,
+        street=payload.street,
+        number=payload.number,
+        apartament=payload.apartament,
+        floor=payload.floor,
+        scale=payload.scale,
+        city=payload.city,
+        country=payload.country,
         phone=payload.phone,
-        email=payload.email,
-        notes=payload.note,
-        status="new",
+        email=str(payload.email),
+        note=payload.note,
+        items=[item.model_dump() for item in payload.items],  # Pydantic -> dict pentru JSON
     )
     db.add(order)
     await db.commit()

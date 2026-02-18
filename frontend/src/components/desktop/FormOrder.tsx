@@ -8,16 +8,49 @@ import InputAddress from "@/components/desktop/InputAddress";
 import PaymentOption from "@/components/desktop/PaymentOption";
 import TableOrder from "@/components/desktop/TableOrder";
 import Undo from "@/assets/images/undo.png";
-import type {CartType} from "@/types/CartType"
-
+import type { CartType } from "@/types/CartType";
 
 type Props = {
   total: number;
   cart: CartType[];
+  name: string;
+  address: string;
+  city: string;
+  country: string;
+  phone: string;
+  email: string;
+  note: string;
   handleBackToMenu: () => void;
-}
+  placeOrder: () => void;
+  onSetNote: (value:string) => void;
+  onSetEmail: (value:string) => void;
+  onSetPhone: (value:string) => void;
+  onSetCountry: (value:string) => void;
+  onSetCity: (value:string) => void;
+  onSetAddress: (value:string) =>string;
+  onSetName: (value:string) => void;
+};
 
-export default function FormOrder({total, cart, handleBackToMenu}:Props) {
+export default function FormOrder({
+  total,
+  cart,
+  name,
+  address,
+  city,
+  country,
+  phone,
+  email,
+  note,
+  handleBackToMenu,
+  placeOrder,
+  onSetNote,
+  onSetEmail,
+  onSetPhone,
+  onSetCountry,
+  onSetCity,
+  onSetAddress,
+  onSetName,
+}: Props) {
   return (
     <>
       <section className="hidden sm:flex absolute inset-0 items-center justify-center pt-32">
@@ -31,11 +64,16 @@ export default function FormOrder({total, cart, handleBackToMenu}:Props) {
         [transform:perspective(1200px)_rotateX(6deg)]
         hover:[transform:perspective(1200px)_rotateX(0deg)]"
         >
-          <div className = "absolute">
-            <img src={Undo} alt="" className="max-w-14 cursor-pointer" onClick = {() =>handleBackToMenu()}/>
+          <div className="absolute">
+            <img
+              src={Undo}
+              alt=""
+              className="max-w-14 cursor-pointer"
+              onClick={() => handleBackToMenu()}
+            />
           </div>
 
-          <div className = "flex justify-center py-5">
+          <div className="flex justify-center py-5">
             <h2 className="text-white font-bold italic text-sm lg:text-lg">
               Fresh ingredients, handmade, served hot 🔥
             </h2>
@@ -45,33 +83,33 @@ export default function FormOrder({total, cart, handleBackToMenu}:Props) {
             <div className="flex flex-col items-center justify-center gap-y-4 lg:gap-y-12 border-2 rounded-xl border-white">
               <div>
                 {" "}
-                <InputName />
+                <InputName name = {name} onSetName = {onSetName}/>
               </div>
               <div>
-                <InputAddress />
+                <InputAddress address = {address} onSetAddress = {onSetAddress}/>
               </div>
               <div>
-                <InputCity />
+                <InputCity city = {city} onSetCity = {onSetCity}/>
               </div>
               <div>
-                <InputCountry />
+                <InputCountry country = {country} onSetCountry = {onSetCountry}/>
               </div>
               <div>
-                <InputPhone />
+                <InputPhone phone = {phone} onSetPhone = {onSetPhone}/>
               </div>
               <div>
-                <InputEmail />
+                <InputEmail email = {email} onSetEmail = {onSetEmail}/>
               </div>
               <div>
-                <InputNoteOrder />
+                <InputNoteOrder note = {note} onSetNote = {onSetNote}/>
               </div>
             </div>
             <div className="flex flex-col justify-center gap-y-4 border-2 border-white rounded-xl px-10 py-8">
               <div className="border-b-2 flex flex-col">
-                <TableOrder total = {total} cart = {cart}/>
+                <TableOrder total={total} cart={cart} />
               </div>
               <div>
-                <PaymentOption />
+                <PaymentOption placeOrder = {placeOrder}/>
               </div>
             </div>
           </div>
@@ -104,7 +142,7 @@ export default function FormOrder({total, cart, handleBackToMenu}:Props) {
         </div>
         <div className="flex flex-col justify-center gap-y-4">
           <div>
-            <TableOrder cart = {cart} total = {total}/>
+            <TableOrder cart={cart} total={total} />
           </div>
           <div>
             <PaymentOption />

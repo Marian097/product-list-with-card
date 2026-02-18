@@ -20,7 +20,7 @@ function App() {
       />
 
       {render.isConfirmOrder ? (
-          <Checkout total = {render.total} cart = {render.cart} closeCart = {render.closeCart} isOpenCart = {render.isOpenCart} handleBackToMenu = {render.handleBackToMenu}/>
+          <Checkout total = {render.total} cart = {render.cart} closeCart = {render.closeCart} isOpenCart = {render.isOpenCart} handleBackToMenu = {render.handleBackToMenu} name = {render.name} address = {render.address} city = {render.city} country = {render.country} phone = {render.phone} email = {render.email} note = {render.note} placeOrder = {render.placeOrder} onSetNote = {render.setNote} onSetEmail = {render.setEmail} onSetPhone = {render.setPhone} onSetCountry = {render.setCountry} onSetCity = {render.setCity} onSetAddress = {render.setAddress} onSetName = {render.setName} />
       ) : (
         <>
           <Home
