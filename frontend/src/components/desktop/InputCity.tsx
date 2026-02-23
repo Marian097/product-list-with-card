@@ -7,7 +7,7 @@ export default function InputCity({city, onSetCity} : Props) {
   return (
     <div className = "flex gap-x-5">
       <div>
-        {" "}
+        {""}
         <label htmlFor="" className = "font-medium text-white">City:</label>
       </div>
       <div>

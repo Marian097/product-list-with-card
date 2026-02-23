@@ -5,24 +5,32 @@ import { useEffect } from "react";
 type Props = {
   total: number;
   cart: CartType[];
-  name: string,
-  address:string,
-  city: string,
-  country: string,
-  phone:string,
-  email:string,
-  note:string,
+  name: string | " ";
+  street: string;
+  city: string;
+  phone: string;
+  email: string;
+  note: string;
   isOpenCart: boolean;
+  number: string;
+  block: string;
+  floor: string;
+  scale: string;
+  apartament: string;
+  onSetNumber: (value: string) => void;
+  onSetBlock: (value: string) => void;
+  onSetFloor: (value: string) => void;
+  onSetScale: (value: string) => void;
+  onSetApartament: (value: string) => void;
   closeCart: () => void;
   handleBackToMenu: () => void;
   placeOrder: () => void;
-  onSetNote: (value:string) => void;
-  onSetEmail: (value:string) => void;
-  onSetPhone: (value:string) => void;
-  onSetCountry: (value:string) => void;
-  onSetCity: (value:string) => void;
-  onSetAddress: (value:string) => string;
-  onSetName: (value:string) => void;
+  onSetNote: (value: string) => void;
+  onSetEmail: (value: string) => void;
+  onSetPhone: (value: string) => void;
+  onSetCity: (value: string) => void;
+  onSetStreet: (value: string) => void;
+  setName: (value: string) => void;
 };
 
 export default function Checkout({
@@ -30,26 +38,31 @@ export default function Checkout({
   cart,
   isOpenCart,
   name,
-  address,
+  street,
   city,
-  country,
   phone,
   email,
   note,
+  number,
+  block,
+  floor,
+  scale,
+  apartament,
+  onSetNumber,
+  onSetBlock,
+  onSetFloor,
+  onSetScale,
+  onSetApartament,
   closeCart,
   handleBackToMenu,
   placeOrder,
   onSetNote,
   onSetEmail,
   onSetPhone,
-  onSetCountry,
   onSetCity,
-  onSetAddress,
-  onSetName
-
-
+  onSetStreet,
+  setName,
 }: Props) {
-  
   useEffect(() => {
     closeCart();
   }, []);
@@ -59,13 +72,67 @@ export default function Checkout({
       {isOpenCart ? (
         <>
           <div className="blur-sm absolute md:w-full max-w-6xl px-6">
-            <FormOrder total={total} cart={cart} handleBackToMenu = {handleBackToMenu} name = {name} address = {address} city = {city} country = {country} phone = {phone} email = {email} note = {note} placeOrder = {placeOrder} onSetNote = {onSetNote} onSetEmail = {onSetEmail} onSetPhone = {onSetPhone} onSetCountry = {onSetCountry} onSetCity = {onSetCity} onSetAddress = {onSetAddress} onSetName = {onSetName} />
+            <FormOrder
+              total={total}
+              cart={cart}
+              handleBackToMenu={handleBackToMenu}
+              name={name}
+              street={street}
+              city={city}
+              phone={phone}
+              email={email}
+              note={note}
+              placeOrder={placeOrder}
+              onSetNote={onSetNote}
+              onSetEmail={onSetEmail}
+              onSetPhone={onSetPhone}
+              onSetCity={onSetCity}
+              onSetStreet={onSetStreet}
+              setName={setName}
+              number={number}
+              block={block}
+              floor={floor}
+              scale={scale}
+              apartament={apartament}
+              onSetNumber={onSetNumber}
+              onSetBlock={onSetBlock}
+              onSetFloor={onSetFloor}
+              onSetScale={onSetScale}
+              onSetApartament={onSetApartament}
+            />
           </div>
         </>
       ) : (
         <>
           <div className="absolute md:w-full max-w-6xl px-6">
-            <FormOrder total={total} cart={cart} handleBackToMenu = {handleBackToMenu} />
+            <FormOrder
+              total={total}
+              cart={cart}
+              handleBackToMenu={handleBackToMenu}
+              name={name}
+              street={street}
+              city={city}
+              phone={phone}
+              email={email}
+              note={note}
+              placeOrder={placeOrder}
+              onSetNote={onSetNote}
+              onSetEmail={onSetEmail}
+              onSetPhone={onSetPhone}
+              onSetCity={onSetCity}
+              onSetStreet={onSetStreet}
+              setName={setName}
+              number={number}
+              block={block}
+              floor={floor}
+              scale={scale}
+              apartament={apartament}
+              onSetNumber={onSetNumber}
+              onSetBlock={onSetBlock}
+              onSetFloor={onSetFloor}
+              onSetScale={onSetScale}
+              onSetApartament={onSetApartament}
+            />
           </div>
         </>
       )}

@@ -12,8 +12,9 @@ const orderSchema = yup.object({
 
   street: yup.string().required(),
   number: yup.string().required(),
-  apartament: yup.string().required(),
-  floor: yup.string().required(),
+  block: yup.string().optional(),
+  apartament: yup.string().optional(),
+  floor: yup.string().optional(),
   scale: yup.string().optional(),
 
   city: yup.string().required("City is required"),
@@ -36,13 +37,17 @@ export default function Shop() {
   const [isOpenCart, setIsOpenCart] = useState(false);
   const [isConfirmOrder, setIsConfirmOrder] = useState(false);
   const [isBlur, setIsBlur] = useState(false);
-  const [name, setName] = useState<string>("");
-  const [address, setAddress] = useState<string>("");
+  const [name, setName] = useState<string>(" ");
+  const [street, setStreet] = useState<string>("");
   const [city, setCity] = useState<string>("");
-  const [country, setCountry] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [note, setNote] = useState<string>("");
+  const [number, setNumber] = useState<string>("");
+  const [block, setBlock] = useState<string>("");
+  const [floor, setFloor] = useState<string>("");
+  const [scale, setScale] = useState<string>("");
+  const [apartament, setApartament] = useState<string>("");
 
   const total = useMemo(() => {
     return cart.reduce((sum, val) => sum + val.subtotal, 0);
@@ -147,36 +152,22 @@ export default function Shop() {
     }
   }
 
-  const parseAddress = (value: string) => {
-    const [street, number, apartament, floor, scale] = value
-      .split(",")
-      .map((s) => s.trim());
-    return {
-      street: street || "",
-      number: number || "",
-      apartament: apartament || "",
-      floor: floor || "",
-      scale: scale || "",
-    };
-  };
 
   async function placeOrder() {
-    const addr = parseAddress(address);
-
     const payload = {
       name: name,
-      street: addr.street,
-      number: addr.number,
-      apartament: addr.apartament,
-      floor: addr.floor,
-      scale: addr.scale,
+      street: street,
+      number: number,
+      block: block,
+      apartament: apartament,
+      floor: floor,
+      scale: scale,
       city: city,
-      country:country,
       phone:phone,
       email:email,
       note:note,
       items: cart.map((p) => ({
-        name: p.name,
+        product: p.name,
         quantity: p.quantity,
         price: p.price,
       })),
@@ -188,7 +179,7 @@ export default function Shop() {
         abortEarly: false,
       });
 
-      await fetch("/api/orders", {
+      await fetch("http://localhost:4000/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -218,20 +209,29 @@ export default function Shop() {
     isOpenCart,
     isConfirmOrder,
     name,
-    address,
+    street,
     city,
-    country,
     phone,
     email,
     note,
+    number,
+    block,
+    floor,
+    scale,
+    apartament,
 
+
+    setApartament,
+    setScale,
+    setFloor,
+    setBlock,
+    setNumber,
     placeOrder,
     setNote,
     setEmail,
     setPhone,
-    setCountry,
     setCity,
-    setAddress,
+    setStreet,
     setName,
     addToCart,
     handleDeleteToCart,

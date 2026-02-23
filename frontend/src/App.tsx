@@ -3,7 +3,6 @@ import Shop from "@/hooks/Shop";
 import Header from "@/components/desktop/Header";
 import Checkout from "@/pages/Checkout";
 
-
 function App() {
   const render = Shop();
   return (
@@ -20,7 +19,36 @@ function App() {
       />
 
       {render.isConfirmOrder ? (
-          <Checkout total = {render.total} cart = {render.cart} closeCart = {render.closeCart} isOpenCart = {render.isOpenCart} handleBackToMenu = {render.handleBackToMenu} name = {render.name} address = {render.address} city = {render.city} country = {render.country} phone = {render.phone} email = {render.email} note = {render.note} placeOrder = {render.placeOrder} onSetNote = {render.setNote} onSetEmail = {render.setEmail} onSetPhone = {render.setPhone} onSetCountry = {render.setCountry} onSetCity = {render.setCity} onSetAddress = {render.setAddress} onSetName = {render.setName} />
+        <Checkout
+          total={render.total}
+          cart={render.cart}
+          closeCart={render.closeCart}
+          isOpenCart={render.isOpenCart}
+          handleBackToMenu={render.handleBackToMenu}
+          name={render.name}
+          street={render.street}
+          city={render.city}
+          phone={render.phone}
+          email={render.email}
+          note={render.note}
+          placeOrder={render.placeOrder}
+          onSetNote={render.setNote}
+          onSetEmail={render.setEmail}
+          onSetPhone={render.setPhone}
+          onSetCity={render.setCity}
+          onSetStreet={render.setStreet}
+          setName={render.setName}
+          number={render.number}
+          block={render.block}
+          floor={render.floor}
+          scale={render.scale}
+          apartament={render.apartament}
+          onSetNumber = {render.setNumber}
+          onSetBlock = {render.setBlock}
+          onSetFloor = {render.setFloor}
+          onSetScale = {render.setScale}
+          onSetApartament = {render.setApartament}
+        />
       ) : (
         <>
           <Home

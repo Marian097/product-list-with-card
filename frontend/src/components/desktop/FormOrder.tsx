@@ -1,5 +1,4 @@
 import InputCity from "@/components/desktop/InputCity";
-import InputCountry from "@/components/desktop/InputCountry";
 import InputEmail from "@/components/desktop/InputEmail";
 import InputName from "@/components/desktop/InputName";
 import InputNoteOrder from "@/components/desktop/InputNoteOrder";
@@ -14,42 +13,58 @@ type Props = {
   total: number;
   cart: CartType[];
   name: string;
-  address: string;
+  street: string;
   city: string;
-  country: string;
   phone: string;
   email: string;
   note: string;
+  number: string;
+  block: string;
+  floor: string;
+  scale: string;
+  apartament: string;
   handleBackToMenu: () => void;
   placeOrder: () => void;
-  onSetNote: (value:string) => void;
-  onSetEmail: (value:string) => void;
-  onSetPhone: (value:string) => void;
-  onSetCountry: (value:string) => void;
-  onSetCity: (value:string) => void;
-  onSetAddress: (value:string) =>string;
-  onSetName: (value:string) => void;
+  onSetNote: (value: string) => void;
+  onSetEmail: (value: string) => void;
+  onSetPhone: (value: string) => void;
+  onSetCity: (value: string) => void;
+  onSetStreet: (value: string) => void;
+  setName: (value: string) => void;
+  onSetNumber: (value: string) => void;
+  onSetBlock: (value: string) => void;
+  onSetFloor: (value: string) => void;
+  onSetScale: (value: string) => void;
+  onSetApartament: (value: string) => void;
 };
 
 export default function FormOrder({
   total,
   cart,
   name,
-  address,
+  street,
   city,
-  country,
   phone,
   email,
   note,
+  number,
+  block,
+  floor,
+  scale,
+  apartament,
+  onSetNumber,
+  onSetBlock,
+  onSetFloor,
+  onSetScale,
+  onSetApartament,
   handleBackToMenu,
   placeOrder,
   onSetNote,
   onSetEmail,
   onSetPhone,
-  onSetCountry,
   onSetCity,
-  onSetAddress,
-  onSetName,
+  onSetStreet,
+  setName,
 }: Props) {
   return (
     <>
@@ -80,28 +95,38 @@ export default function FormOrder({
           </div>
 
           <div className="grid sm:grid-cols-2 grid-cols-1 gap-x-32 ">
-            <div className="flex flex-col items-center justify-center gap-y-4 lg:gap-y-12 border-2 rounded-xl border-white">
+            <div className="flex flex-col items-center justify-center gap-y-4 lg:gap-y-4 border-2 rounded-xl border-white">
               <div>
                 {" "}
-                <InputName name = {name} onSetName = {onSetName}/>
+                <InputName name={name} setName={setName} />
               </div>
               <div>
-                <InputAddress address = {address} onSetAddress = {onSetAddress}/>
+                <InputAddress
+                  street={street}
+                  number={number}
+                  block={block}
+                  floor={floor}
+                  scale={scale}
+                  apartament={apartament}
+                  onSetStreet={onSetStreet}
+                  onSetNumber={onSetNumber}
+                  onSetBlock={onSetBlock}
+                  onSetFloor={onSetFloor}
+                  onSetScale={onSetScale}
+                  onSetApartament={onSetApartament}
+                />
               </div>
               <div>
-                <InputCity city = {city} onSetCity = {onSetCity}/>
+                <InputCity city={city} onSetCity={onSetCity} />
               </div>
               <div>
-                <InputCountry country = {country} onSetCountry = {onSetCountry}/>
+                <InputPhone phone={phone} onSetPhone={onSetPhone} />
               </div>
               <div>
-                <InputPhone phone = {phone} onSetPhone = {onSetPhone}/>
+                <InputEmail email={email} onSetEmail={onSetEmail} />
               </div>
               <div>
-                <InputEmail email = {email} onSetEmail = {onSetEmail}/>
-              </div>
-              <div>
-                <InputNoteOrder note = {note} onSetNote = {onSetNote}/>
+                <InputNoteOrder note={note} onSetNote={onSetNote} />
               </div>
             </div>
             <div className="flex flex-col justify-center gap-y-4 border-2 border-white rounded-xl px-10 py-8">
@@ -109,35 +134,43 @@ export default function FormOrder({
                 <TableOrder total={total} cart={cart} />
               </div>
               <div>
-                <PaymentOption placeOrder = {placeOrder}/>
+                <PaymentOption placeOrder={placeOrder} />
               </div>
             </div>
           </div>
         </form>
       </section>
-      <section className="sm:hidden w-full min-h-screen pt-24 md:pt-36">
+      <section className="sm:hidden w-full min-h-screen pt-48 md:pt-36">
         <div className="flex flex-col justify-center gap-y-4 items-center">
           <div>
             {" "}
-            <InputName />
+            <InputName name={name} setName={setName} />
           </div>
           <div>
-            <InputAddress />
+            <InputAddress  street={street}
+                  number={number}
+                  block={block}
+                  floor={floor}
+                  scale={scale}
+                  apartament={apartament}
+                  onSetStreet={onSetStreet}
+                  onSetNumber={onSetNumber}
+                  onSetBlock={onSetBlock}
+                  onSetFloor={onSetFloor}
+                  onSetScale={onSetScale}
+                  onSetApartament={onSetApartament}/>
           </div>
           <div>
-            <InputCity />
+            <InputCity city={city} onSetCity={onSetCity}/>
           </div>
           <div>
-            <InputCountry />
+            <InputPhone phone={phone} onSetPhone={onSetPhone}  />
           </div>
           <div>
-            <InputPhone />
+            <InputEmail email={email} onSetEmail={onSetEmail}/>
           </div>
           <div>
-            <InputEmail />
-          </div>
-          <div>
-            <InputNoteOrder />
+            <InputNoteOrder note={note} onSetNote={onSetNote} />
           </div>
         </div>
         <div className="flex flex-col justify-center gap-y-4">
@@ -145,7 +178,7 @@ export default function FormOrder({
             <TableOrder cart={cart} total={total} />
           </div>
           <div>
-            <PaymentOption />
+            <PaymentOption  placeOrder={placeOrder}/>
           </div>
         </div>
       </section>
