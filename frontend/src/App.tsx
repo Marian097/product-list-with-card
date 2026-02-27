@@ -48,6 +48,7 @@ function App() {
           onSetFloor = {render.setFloor}
           onSetScale = {render.setScale}
           onSetApartament = {render.setApartament}
+          cancelOrder = {render.cancelOrder}
         />
       ) : (
         <>

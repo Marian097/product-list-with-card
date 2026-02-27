@@ -31,6 +31,7 @@ type Props = {
   onSetCity: (value: string) => void;
   onSetStreet: (value: string) => void;
   setName: (value: string) => void;
+  cancelOrder: () => void;
 };
 
 export default function Checkout({
@@ -62,6 +63,7 @@ export default function Checkout({
   onSetCity,
   onSetStreet,
   setName,
+  cancelOrder,
 }: Props) {
   useEffect(() => {
     closeCart();
@@ -99,6 +101,7 @@ export default function Checkout({
               onSetFloor={onSetFloor}
               onSetScale={onSetScale}
               onSetApartament={onSetApartament}
+              cancelOrder= {cancelOrder}
             />
           </div>
         </>
@@ -132,6 +135,7 @@ export default function Checkout({
               onSetFloor={onSetFloor}
               onSetScale={onSetScale}
               onSetApartament={onSetApartament}
+              cancelOrder= {cancelOrder}
             />
           </div>
         </>

@@ -36,6 +36,7 @@ type Props = {
   onSetFloor: (value: string) => void;
   onSetScale: (value: string) => void;
   onSetApartament: (value: string) => void;
+  cancelOrder: () => void;
 };
 
 export default function FormOrder({
@@ -65,6 +66,7 @@ export default function FormOrder({
   onSetCity,
   onSetStreet,
   setName,
+  cancelOrder,
 }: Props) {
   return (
     <>
@@ -94,8 +96,8 @@ export default function FormOrder({
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 grid-cols-1 gap-x-32 ">
-            <div className="flex flex-col items-center justify-center gap-y-4 lg:gap-y-4 border-2 rounded-xl border-white">
+          <div className="grid sm:grid-cols-2 grid-cols-1 ">
+            <div className="flex flex-col items-center justify-center gap-y-4 lg:gap-y-4 rounded-xl">
               <div>
                 {" "}
                 <InputName name={name} setName={setName} />
@@ -129,19 +131,19 @@ export default function FormOrder({
                 <InputNoteOrder note={note} onSetNote={onSetNote} />
               </div>
             </div>
-            <div className="flex flex-col justify-center gap-y-4 border-2 border-white rounded-xl px-10 py-8">
+            <div className="flex flex-col justify-center gap-y-4 rounded-xl px-10 py-8">
               <div className="border-b-2 flex flex-col">
                 <TableOrder total={total} cart={cart} />
               </div>
               <div>
-                <PaymentOption placeOrder={placeOrder} />
+                <PaymentOption placeOrder={placeOrder} handleBackToMenu = {handleBackToMenu} cancelOrder = {cancelOrder}/>
               </div>
             </div>
           </div>
         </form>
       </section>
       <section className="sm:hidden w-full min-h-screen pt-48 md:pt-36">
-        <div className="flex flex-col justify-center gap-y-4 items-center">
+        <div className="flex flex-col justify-center gap-y-5 items-center">
           <div>
             {" "}
             <InputName name={name} setName={setName} />
@@ -174,11 +176,11 @@ export default function FormOrder({
           </div>
         </div>
         <div className="flex flex-col justify-center gap-y-4">
-          <div>
+          <div className = "mt-5">
             <TableOrder cart={cart} total={total} />
           </div>
           <div>
-            <PaymentOption  placeOrder={placeOrder}/>
+            <PaymentOption  placeOrder={placeOrder} handleBackToMenu = {handleBackToMenu} cancelOrder = {cancelOrder}/>
           </div>
         </div>
       </section>

@@ -152,6 +152,13 @@ export default function Shop() {
     }
   }
 
+    function cancelOrder() {
+    if (isConfirmOrder) {
+      setIsConfirmOrder(false);
+      setCart([])
+    }
+  }
+
 
   async function placeOrder() {
     const payload = {
@@ -241,5 +248,6 @@ export default function Shop() {
     closeCart,
     toggleCart,
     handleBackToMenu,
+    cancelOrder,
   };
 }
