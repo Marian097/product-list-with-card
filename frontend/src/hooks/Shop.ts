@@ -48,6 +48,7 @@ export default function Shop() {
   const [floor, setFloor] = useState<string>("");
   const [scale, setScale] = useState<string>("");
   const [apartament, setApartament] = useState<string>("");
+  const [rated, setRated] = useState<number>(4);
 
   const total = useMemo(() => {
     return cart.reduce((sum, val) => sum + val.subtotal, 0);
@@ -226,8 +227,9 @@ export default function Shop() {
     floor,
     scale,
     apartament,
+    rated,
 
-
+    setRated,
     setApartament,
     setScale,
     setFloor,

@@ -28,7 +28,7 @@ export default function Header({
     <div className="relative z-20">
       <header className="fixed top-0 left-0 right-0 z-40 flex md:justify-between md:items-center w-full h-24 md:h-36 bg-black/80 backdrop-blur-md">
         <div className="">
-          <img src={logo} className="md:h-35 md:w-36 h-20" />
+          <img src={logo} className="md:h-40 md:w-40 h-20" />
         </div>
         <div className="absolute right-16 sm:right-10 top-9">
           <img

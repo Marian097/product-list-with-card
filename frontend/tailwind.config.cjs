@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports = withMT({
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -11,7 +13,7 @@ module.exports = {
           },
           "60%": {
             opacity: "1",
-            transform: "translateY(4px) scale(1.01)", // mic bounce
+            transform: "translateY(4px) scale(1.01)",
           },
           "100%": {
             opacity: "1",
@@ -25,4 +27,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+});

@@ -53,6 +53,9 @@ function App() {
       ) : (
         <>
           <Home
+          
+            rated = {render.rated}
+            setRated = {render.setRated}
             products={render.products}
             addToCart={render.addToCart}
             setOption={render.setOption}

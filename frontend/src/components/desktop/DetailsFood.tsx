@@ -1,12 +1,15 @@
 import type { Prod } from "@/types/Products";
 import Add from "@/assets/images/icon-add-to-cart.svg";
+import  { RatingWithText }  from "@/components/desktop/RatingWithText";
 
 type ProductsProp = {
   products: Prod[];
+  rated: number;
+  setRated: (rating:number) => void;
   addToCart: (products: Prod) => void;
 };
 
-export default function DetailsFood({ products, addToCart }: ProductsProp) {
+export default function DetailsFood({ products, rated, addToCart, setRated }: ProductsProp) {
   return (
     <div className="w-full sm:max-w-5xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto justify-items-center">
       {products.map((p) => (
@@ -29,7 +32,6 @@ export default function DetailsFood({ products, addToCart }: ProductsProp) {
                   alt={p.name}
                   className="w-full aspect-[4/3] max-h-[200px] object-cover rounded-xl"
                 />
-
                 <div className="">
                   <span className="opacity-35 text-xs md:text-base text-white">
                     {p.category}
@@ -83,6 +85,9 @@ export default function DetailsFood({ products, addToCart }: ProductsProp) {
                 </p>
               </div>
             </div>
+          </div>
+          <div>
+            <RatingWithText rated = {rated} setRated = {setRated}/>
           </div>
           <div className = "flex justify-center">
             <div className="flex justify-center mt-5">

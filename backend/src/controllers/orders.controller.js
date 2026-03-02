@@ -82,12 +82,104 @@ export async function createOrders(req, res, next) {
 }
 
 
-async function getAllOrders(req, res, next)
-{
-  const client = await pool.connect()
+ export async function getAllOrders(req, res) {
+  const client = await pool.connect();
 
-  const orders  = await client.query("SELECT c.name AS name_client, c.phone AS telefon_client, o.product AS product, o.quantity AS qty, o.note_order AS note, o.created_at AS order_placed, a.city AS city, a.street AS street, a.numer AS number_street, a.block AS block, a.floor AS floor_block, a.scale AS scale_block, a.apartament AS apartament, FROM client c JOIN address a ON c.id = a.client_id")
+  try {
+    const { rows } = await client.query(`
+      SELECT
+        c.name       AS name_client,
+        c.phone      AS telefon_client,
+        o.product    AS product,
+        o.quantity   AS qty,
+        o.note_order AS note,
+        o.created_at AS order_placed,
+        a.city       AS city,
+        a.street     AS street,
+        a.number     AS number_street,
+        a.block      AS block,
+        a.floor      AS floor_block,
+        a.scale      AS scale_block,
+        a.apartament AS apartament
+      FROM clients c
+      JOIN address a ON a.client_id = c.id
+      JOIN orders  o ON o.address_id = a.id
+      ORDER BY o.created_at DESC;
+    `);
 
-  client.query("COMMIT");
-  res.status(201).json(orders)
+    return res.status(200).json(rows);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ message: "Server error" });
+  } finally {
+    client.release();
+  }
+}
+
+
+export async function getOrdersDelivered(req, res){
+  const orderClient = await pool.connect();
+
+  try{
+     const {rows} = orderClient.query(`SELECT
+                              c.name AS name_client,
+                              c.phone AS phone_client,
+                              a.city AS city_client,
+                              a.street AS street_client,
+                              a.block AS block_client,
+                              a.floor AS floor_client,
+                              a.scale AS scale_client,
+                              a.apartament AS  apartament_client,
+                              a.number AS number_street_client,
+                              o.product AS prod_order,
+                              o.quantity AS qty_order,
+                              o.price AS price_product,
+                              o.note_order AS note_order,
+                              o.total AS total_price_order,
+                              o.created_at AS place_order FROM clients c JOIN
+                              address a ON c.id = a.client_id JOIN orders o ON a.id = o.address_id
+                              WHERE is_delivered = true`)
+      return res.status(200).json(rows)
+
+  }
+  catch (err){
+    console.error(err)
+  }
+  finally{
+    orderClient.release()
+  }
+}
+
+
+export async function getOrdersNotDelivered(req, res){
+  const orderClient = await pool.connect();
+
+  try{
+     const {rows} = orderClient.query(`SELECT
+                              c.name AS name_client,
+                              c.phone AS phone_client,
+                              a.city AS city_client,
+                              a.street AS street_client,
+                              a.block AS block_client,
+                              a.floor AS floor_client,
+                              a.scale AS scale_client,
+                              a.apartament AS  apartament_client,
+                              a.number AS number_street_client,
+                              o.product AS prod_order,
+                              o.quantity AS qty_order,
+                              o.price AS price_product,
+                              o.note_order AS note_order,
+                              o.total AS total_price_order,
+                              o.created_at AS place_order FROM clients c JOIN
+                              address a ON c.id = a.client_id JOIN orders o ON a.id = o.address_id
+                              WHERE is_delivered = false`)
+      return res.status(200).json(rows)
+
+  }
+  catch (err){
+    console.error(err)
+  }
+  finally{
+    orderClient.release()
+  }
 }
