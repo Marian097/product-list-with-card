@@ -28,10 +28,10 @@ export default function Menu({
 }: ProdProps) {
   return (
     <div className="w-full py-40">
-      <div className="flex justify-center py-16 md:gap-x-7 gap-x-2 cursor-pointer text-sm lg:text-lg">
+      <div className="flex flex-wrap justify-center gap-4 py-10 cursor-pointer text-sm lg:text-lg">
         <div className="flex">
           <div>
-            <img src={dessert} alt="" className="md:w-12 w-5" />
+            <img src={dessert} alt="" className = "w-[6vw] min-w-[28px] max-w-[70px] object-contain"/>
           </div>
           <div>
             <button
@@ -44,7 +44,7 @@ export default function Menu({
         </div>
         <div className="flex">
           <div>
-            <img src={burger} alt="" className="md:w-12 w-5" />
+            <img src={burger} alt="" className="w-[6vw] min-w-[28px] max-w-[70px] object-contain" />
           </div>
           <div>
             <button
@@ -57,7 +57,7 @@ export default function Menu({
         </div>
         <div className="flex">
           <div>
-            <img src={pizza} alt="" className="md:w-12 w-5" />
+            <img src={pizza} alt="" className="w-[6vw] min-w-[28px] max-w-[70px] object-contain" />
           </div>
           <div>
             <button
@@ -70,7 +70,7 @@ export default function Menu({
         </div>
         <div className="flex">
           <div>
-            <img src={grill} alt="" className="md:w-12 w-5" />
+            <img src={grill} alt="" className="w-[6vw] min-w-[28px] max-w-[70px] object-contain" />
           </div>
           <div>
             <button
@@ -83,7 +83,7 @@ export default function Menu({
         </div>
         <div className="flex">
           <div>
-            <img src={garnish} alt="" className="md:w-12 w-5" />
+            <img src={garnish} alt="" className="w-[6vw] min-w-[28px] max-w-[70px] object-contain" />
           </div>
           <div>
             <button
@@ -96,7 +96,7 @@ export default function Menu({
         </div>
         <div className="flex">
           <div>
-            <img src={drinks} alt="" className="md:w-12 w-5" />
+            <img src={drinks} alt="" className="w-[6vw] min-w-[28px] max-w-[70px] object-contain" />
           </div>
           <div>
             <button

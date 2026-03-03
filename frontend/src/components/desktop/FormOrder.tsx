@@ -70,9 +70,9 @@ export default function FormOrder({
 }: Props) {
   return (
     <>
-      <section className="hidden sm:flex absolute inset-0 items-center justify-center pt-32">
+      <section className="hidden sm:flex min-h-screen items-start justify-center pt-40 overflow-y-auto">
         <form
-          className="relative
+          className="
         rounded-2xl bg-black/65 backdrop-blur
         px-6 py-5 2xl:py-36 2xl:px-36
         shadow-[0_35px_120px_-55px_rgba(0,0,0,0.7)]
@@ -142,7 +142,7 @@ export default function FormOrder({
           </div>
         </form>
       </section>
-      <section className="sm:hidden w-full min-h-screen pt-48 md:pt-36">
+      <section className="sm:hidden w-full min-h-screen pt-80 md:pt-36">
         <div className="flex flex-col justify-center gap-y-5 items-center">
           <div>
             {" "}

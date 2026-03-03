@@ -5,6 +5,7 @@ import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
   plugins: [react(), svgr()],
+    base: "/product-list-with-card",
   server: {
     proxy: {
       "/api": "http://127.0.0.1:8000 "

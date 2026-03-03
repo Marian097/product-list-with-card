@@ -157,6 +157,7 @@ export default function Shop() {
     if (isConfirmOrder) {
       setIsConfirmOrder(false);
       setCart([])
+      setLength(0)
     }
   }
 
